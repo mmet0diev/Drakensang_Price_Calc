@@ -66,3 +66,13 @@ T2 -> 344
 T3 -> 688
 T4 -> 1156
 T5 -> 1750
+
+Rune of Rising Power -> 24857
+Rune of Rising Vigor -> 27500
+
+Jewels:
+Normal -> 1500
+Green -> 4125
+Blue -> 8250
+Pink -> 13875
+Legendary -> 21000
