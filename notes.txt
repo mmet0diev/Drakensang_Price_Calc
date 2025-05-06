@@ -1,0 +1,61 @@
+//  Notes   //
+
+<--------------------------------------------------------------------------------------------------------------
+Prices of all Gems in Drakensang Online when melted (in Shiny Dust).
+-------------------------------------------------------------------------------------------------------------->
+Defensive:
+Flawed => 1
+Splintered => 2
+Simple => 4
+(Regular) => 8
+Polished => 20
+Radiant => 60
+Flawless => 180
+Sacred => 400
+Royal => 800
+Trapezoid => 1400
+Refined Trapezoid => 2200
+Brilliant Trapezoid => 3200
+Exquisite Trapezoid => 4400
+Imperial => 5800
+Refined Imperial => 7400
+Brilliant Imperial => 9250
+Exquisite Imperial => 11200
+
+
+Offensive:
+Flawed => 1
+Splintered => 3
+Simple => 5
+(Regular) => 16
+Polished => 25
+Radiant => 75
+Flawless => 225
+Sacred => 500
+Royal => 1000
+Trapezoid => 1750
+Refined Trapezoid => 2750
+Brilliant Trapezoid => 4000
+Exquisite Trapezoid => 5500
+Imperial => 7250
+Refined Imperial => 9250
+Brilliant Imperial => 11500
+Exquisite Imperial => 14000
+
+<--------------------------------------------------------------------------------------------------------------
+Prices of all Runes when melted (in Rune Dust)
+-------------------------------------------------------------------------------------------------------------->
+
+Defensive:
+T1 -> 1250
+T2 -> 3438
+T3 -> 6875
+T4 -> 11563
+T5 -> 17500
+
+Offensive:
+T1 -> 1563
+T2 -> 4298
+T3 -> 8594
+T4 -> 14454
+T5 -> 21875
