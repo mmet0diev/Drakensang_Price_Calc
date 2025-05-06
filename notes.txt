@@ -76,3 +76,23 @@ Green -> 4125
 Blue -> 8250
 Pink -> 13875
 Legendary -> 21000
+
+
+Differnet currency prices for different Markets:
+<--------------------------------------------------------------------------------------------------------------
+Euro (Bulgaria):
+Prem (Normal) 1 month = 7.59€
+Prem (Deluxe) 1 month = 16.49€
+Medium Golden Chest of Dust = 7.59€
+Big Golden Chest of Dust = 37.99€
+Name Change = 3.79€
+
+GBP (UK):
+Prem (Normal) 1 month = 8.99£
+Prem (Deluxe) 1 month = 19.79£
+Medium Golden Chest of Dust = 8.99£
+Big Golden Chest of Dust = 44.99£
+Name Change = 4.49£
+
+
+-------------------------------------------------------------------------------------------------------------->
