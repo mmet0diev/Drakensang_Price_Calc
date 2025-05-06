@@ -46,7 +46,7 @@ Exquisite Imperial => 14000
 Prices of all Runes when melted (in Rune Dust)
 -------------------------------------------------------------------------------------------------------------->
 
-Defensive:
+Defensive (Including runes of andermant fever, Scholar, XP Hunter, Anxiety Keeper, Gold Fever, Realm Charger):
 T1 -> 1250
 T2 -> 3438
 T3 -> 6875
@@ -59,3 +59,10 @@ T2 -> 4298
 T3 -> 8594
 T4 -> 14454
 T5 -> 21875
+
+Others (Wisdom and Materi):
+T1 -> 125
+T2 -> 344
+T3 -> 688
+T4 -> 1156
+T5 -> 1750
