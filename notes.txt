@@ -1,5 +1,7 @@
 //  Notes   //
 
+Prices are going to be represented/converted into € (example GBP to Euro, US Dollar to Euro, Turkish Lira to Euro, etc..)
+
 <--------------------------------------------------------------------------------------------------------------
 Prices of all Gems in Drakensang Online when melted (in Shiny Dust).
 -------------------------------------------------------------------------------------------------------------->
