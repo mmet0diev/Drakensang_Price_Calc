@@ -21,19 +21,29 @@ function premDaysToCash(days = 0, country = "BG_EU") {
     return res;
 }
 
-
+/* 
+The averageAnders is the sum of the anders of all 7 options to purchase andermants in the DSO shop divided by 7.
+The averageAnderCost is the average (in money) of all 7 purchase options in the DSO shop divided by 7.
+*/
 function andersToCash(anders = 0 , country = "BG_EU"){
     let medianAnderCost;
     let averageAnders;
     if(checkValidCountryCode(country)){
         medianAnderCost = countryPrices[country].averageAnderCost;
-        averageAnders = countryPrices[country].averageAnders;
+        averageAnders = countryPrices[country].averageAndermant;
     }else{
         medianAnderCost = undefined;
         averageAnders = undefined;
     }
 
-    let accAndersInAverageAnders = 0;
-    anders < averageAnders ? accAndersInAverageAnders = parseFloat(averageAnders / ander) : accAndersInAverageAnders = parseFloat(anders / averageAnders)
-    return accAndersInAverageAnders;
+    let currAndersInAverageAnders = 0;
+    anders < averageAnders ? currAndersInAverageAnders = anders / averageAnders 
+    : currAndersInAverageAnders = averageAnders / anders;
+    return (currAndersInAverageAnders*medianAnderCost).toFixed(2);
+}
+
+
+// This function should calculate the dust of a character according to the prices of dust packages (mid and big) specified for the specific country
+function shinyDustToCash(flawed_amethyst, ){
+    let sum = 0;
 }

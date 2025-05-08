@@ -10,6 +10,9 @@ import {premDaysToCash, andersToCash} from "./functions.js"
 // console.log(`980 day of premium in  € (UK price) = ${premDaysToCash(980, "UK_EU")}`);
 
 console.log(`${andersToCash(12121)}`)
-console.log(`${andersToCash(28743)}`)
-console.log(`${andersToCash(128000)}`)
 console.log(`${andersToCash(1)}`)
+console.log(`${andersToCash(2)}`)
+console.log(`${andersToCash(3)}`)
+console.log(`${andersToCash(4)}`)
+console.log(`${andersToCash(5)}`)
+console.log(`${andersToCash(6)}`)
