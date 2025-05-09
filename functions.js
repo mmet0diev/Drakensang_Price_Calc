@@ -62,14 +62,14 @@ function shinyDustToCash(GemsCountsArguments = {}, country = "BG_EU") {
     for (let item of gemsNamesList) {
         let splitElement = item.split("_")
         splitGemsNamesList.push(splitElement)
-        console.log(splitElement)
     }
 
+    let totalDust = 0;
     
     for (let arr of splitGemsNamesList) {
-        console.log(shinyDustPerGemsMap[arr[0]][arr[1]])
+        totalDust += shinyDustPerGemsMap[arr[0]][arr[1]] * GemsCountMap[arr[0]+"_"+arr[1]]
     }
-
+    console.log(totalDust)
     return sum;
 }
 
