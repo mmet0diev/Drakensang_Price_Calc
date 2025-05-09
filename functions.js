@@ -49,20 +49,22 @@ function shinyDustToCash(GemsCountsArguments = {}, country="BG_EU") {
     let sum = 0;
     // Update the value for each gem in GemsCounts collection.
     let allGemsNames = Object.keys(GemsCountMap)
+    let gemsNamesList = []
     for (let item of allGemsNames) {
         // console.log(GemsCountsArguments[item] + " equal to " + GemsCounts[item] + " ?")
         if (GemsCountsArguments[item] > GemsCountMap[item]) {
             GemsCountMap[item] = GemsCountsArguments[item];
+            gemsNamesList.push(item)
         }
     }
 
-    let gemTiersList = Object.keys(shinyDustPerGemsMap);
-    let gemTypesList = []
+    let splitGemsNamesList = []
+    for (let item of gemsNamesList){
+        let splitElement = item.split("_")
+        splitGemsNamesList.push(splitElement)
+    }
 
-    console.log(shinyDustPerGemsMap["splintered"]["ruby"])
-    console.log(shinyDustPerGemsMap["polished"]["cyanite"])
-    console.log(shinyDustPerGemsMap["royal"]["amethyst"])
-
+    
 
     return sum;
 }
