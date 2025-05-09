@@ -1,23 +1,24 @@
-import {countryPrices} from "./CountryPrices.js";
-export {premDaysToCash, andersToCash};
+import { countryPrices } from "./CountryPrices.js";
+import { GemsCountMap, shinyDustPerGemsMap } from "./GameGems.js";
+export { premDaysToCash, andersToCash, shinyDustToCash };
 
-function checkValidCountryCode(country){
+function checkValidCountryCode(country) {
     const countryCodes = Object.keys(countryPrices)
     return countryCodes.includes(country)
 }
 
 function premDaysToCash(days = 0, country = "BG_EU") {
     let prem_month_price;
-    if(checkValidCountryCode(country)){
+    if (checkValidCountryCode(country)) {
         prem_month_price = countryPrices[country].prem_per_month;
-    }else{
+    } else {
         prem_month_price = undefined;
     }
 
     const period = 30;
 
     let costPerDay = prem_month_price / period;
-    let res = parseFloat((days*costPerDay).toFixed(2));
+    let res = parseFloat((days * costPerDay).toFixed(2));
     return res;
 }
 
@@ -25,25 +26,45 @@ function premDaysToCash(days = 0, country = "BG_EU") {
 The averageAnders is the sum of the anders of all 7 options to purchase andermants in the DSO shop divided by 7.
 The averageAnderCost is the average (in money) of all 7 purchase options in the DSO shop divided by 7.
 */
-function andersToCash(anders = 0 , country = "BG_EU"){
+function andersToCash(anders = 0, country = "BG_EU") {
     let medianAnderCost;
     let averageAnders;
-    if(checkValidCountryCode(country)){
+    if (checkValidCountryCode(country)) {
         medianAnderCost = countryPrices[country].averageAnderCost;
         averageAnders = countryPrices[country].averageAndermant;
-    }else{
+    } else {
         medianAnderCost = undefined;
         averageAnders = undefined;
     }
 
     let currAndersInAverageAnders = 0;
-    anders < averageAnders ? currAndersInAverageAnders = anders / averageAnders 
-    : currAndersInAverageAnders = averageAnders / anders;
-    return (currAndersInAverageAnders*medianAnderCost).toFixed(2);
+    anders < averageAnders ? currAndersInAverageAnders = anders / averageAnders
+        : currAndersInAverageAnders = averageAnders / anders;
+    return (currAndersInAverageAnders * medianAnderCost).toFixed(2);
 }
 
 
-// This function should calculate the dust of a character according to the prices of dust packages (mid and big) specified for the specific country
-function shinyDustToCash(flawed_amethyst, ){
+// This function calculates the dust of a character according to the prices of dust packages (mid and big) specified for the specific country
+function shinyDustToCash(GemsCountsArguments = {}, country="BG_EU") {
     let sum = 0;
+    // Update the value for each gem in GemsCounts collection.
+    let allGemsNames = Object.keys(GemsCountMap)
+    for (let item of allGemsNames) {
+        // console.log(GemsCountsArguments[item] + " equal to " + GemsCounts[item] + " ?")
+        if (GemsCountsArguments[item] > GemsCountMap[item]) {
+            GemsCountMap[item] = GemsCountsArguments[item];
+        }
+    }
+
+    let gemTiersList = Object.keys(shinyDustPerGemsMap);
+    let gemTypesList = []
+
+    console.log(shinyDustPerGemsMap["splintered"]["ruby"])
+    console.log(shinyDustPerGemsMap["polished"]["cyanite"])
+    console.log(shinyDustPerGemsMap["royal"]["amethyst"])
+
+
+    return sum;
 }
+
+

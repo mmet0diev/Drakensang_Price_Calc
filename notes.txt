@@ -103,3 +103,104 @@ Average of andermant prices (BG):
 20.86714285714286
 Averange of andermants (BG):
 28742.85714285714
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    flawed_amethyst = 0, flawed_cyanite = 0, flawed_diamond = 0, flawed_diamond_fire = 0, flawed_diamond_ice = 0,
+  flawed_diamond_light = 0, flawed_diamond_poison = 0, flawed_diamond_ander = 0, flawed_onyx = 0, flawed_ruby = 0,
+  flawed_emerald = 0, flawed_zircon = 0, flawed_rhodolite = 0,
+
+  splintered_amethyst = 0, splintered_cyanite = 0, splintered_diamond = 0, splintered_diamond_fire = 0, splintered_diamond_ice = 0,
+  splintered_diamond_light = 0, splintered_diamond_poison = 0, splintered_diamond_ander = 0, splintered_onyx = 0, splintered_ruby = 0,
+  splintered_emerald = 0, splintered_zircon = 0, splintered_rhodolite = 0,
+
+  simple_amethyst = 0, simple_cyanite = 0, simple_diamond = 0, simple_diamond_fire = 0, simple_diamond_ice = 0,
+  simple_diamond_light = 0, simple_diamond_poison = 0, simple_diamond_ander = 0, simple_onyx = 0, simple_ruby = 0,
+  simple_emerald = 0, simple_zircon = 0, simple_rhodolite = 0,
+
+  regular_amethyst = 0, regular_cyanite = 0, regular_diamond = 0, regular_diamond_fire = 0, regular_diamond_ice = 0,
+  regular_diamond_light = 0, regular_diamond_poison = 0, regular_diamond_ander = 0, regular_onyx = 0, regular_ruby = 0,
+  regular_emerald = 0, regular_zircon = 0, regular_rhodolite = 0,
+
+  polished_amethyst = 0, polished_cyanite = 0, polished_diamond = 0, polished_diamond_fire = 0, polished_diamond_ice = 0,
+  polished_diamond_light = 0, polished_diamond_poison = 0, polished_diamond_ander = 0, polished_onyx = 0, polished_ruby = 0,
+  polished_emerald = 0, polished_zircon = 0, polished_rhodolite = 0,
+
+  radiant_amethyst = 0, radiant_cyanite = 0, radiant_diamond = 0, radiant_diamond_fire = 0, radiant_diamond_ice = 0,
+  radiant_diamond_light = 0, radiant_diamond_poison = 0, radiant_diamond_ander = 0, radiant_onyx = 0, radiant_ruby = 0,
+  radiant_emerald = 0, radiant_zircon = 0, radiant_rhodolite = 0,
+
+  flawless_amethyst = 0, flawless_cyanite = 0, flawless_diamond = 0, flawless_diamond_fire = 0, flawless_diamond_ice = 0,
+  flawless_diamond_light = 0, flawless_diamond_poison = 0, flawless_diamond_ander = 0, flawless_onyx = 0, flawless_ruby = 0,
+  flawless_emerald = 0, flawless_zircon = 0, flawless_rhodolite = 0,
+
+  sacred_amethyst = 0, sacred_cyanite = 0, sacred_diamond = 0, sacred_diamond_fire = 0, sacred_diamond_ice = 0,
+  sacred_diamond_light = 0, sacred_diamond_poison = 0, sacred_diamond_ander = 0, sacred_onyx = 0, sacred_ruby = 0,
+  sacred_emerald = 0, sacred_zircon = 0, sacred_rhodolite = 0,
+
+  royal_amethyst = 0, royal_cyanite = 0, royal_diamond = 0, royal_diamond_fire = 0, royal_diamond_ice = 0,
+  royal_diamond_light = 0, royal_diamond_poison = 0, royal_diamond_ander = 0, royal_onyx = 0, royal_ruby = 0,
+  royal_emerald = 0, royal_zircon = 0, royal_rhodolite = 0,
+
+  trapezoid_amethyst = 0, trapezoid_cyanite = 0, trapezoid_diamond = 0, trapezoid_diamond_fire = 0, trapezoid_diamond_ice = 0,
+  trapezoid_diamond_light = 0, trapezoid_diamond_poison = 0, trapezoid_diamond_ander = 0, trapezoid_onyx = 0, trapezoid_ruby = 0,
+  trapezoid_emerald = 0, trapezoid_zircon = 0, trapezoid_rhodolite = 0,
+
+  refined_trapezoid_amethyst = 0, refined_trapezoid_cyanite = 0, refined_trapezoid_diamond = 0, refined_trapezoid_diamond_fire = 0,
+  refined_trapezoid_diamond_ice = 0, refined_trapezoid_diamond_light = 0, refined_trapezoid_diamond_poison = 0,
+  refined_trapezoid_diamond_ander = 0, refined_trapezoid_onyx = 0, refined_trapezoid_ruby = 0, refined_trapezoid_emerald = 0,
+  refined_trapezoid_zircon = 0, refined_trapezoid_rhodolite = 0,
+
+  brilliant_trapezoid_amethyst = 0, brilliant_trapezoid_cyanite = 0, brilliant_trapezoid_diamond = 0, brilliant_trapezoid_diamond_fire = 0,
+  brilliant_trapezoid_diamond_ice = 0, brilliant_trapezoid_diamond_light = 0, brilliant_trapezoid_diamond_poison = 0,
+  brilliant_trapezoid_diamond_ander = 0, brilliant_trapezoid_onyx = 0, brilliant_trapezoid_ruby = 0, brilliant_trapezoid_emerald = 0,
+  brilliant_trapezoid_zircon = 0, brilliant_trapezoid_rhodolite = 0,
+
+  exquisite_trapezoid_amethyst = 0, exquisite_trapezoid_cyanite = 0, exquisite_trapezoid_diamond = 0, exquisite_trapezoid_diamond_fire = 0,
+  exquisite_trapezoid_diamond_ice = 0, exquisite_trapezoid_diamond_light = 0, exquisite_trapezoid_diamond_poison = 0,
+  exquisite_trapezoid_diamond_ander = 0, exquisite_trapezoid_onyx = 0, exquisite_trapezoid_ruby = 0, exquisite_trapezoid_emerald = 0,
+  exquisite_trapezoid_zircon = 0, exquisite_trapezoid_rhodolite = 0,
+
+  imperial_amethyst = 0, imperial_cyanite = 0, imperial_diamond = 0, imperial_diamond_fire = 0, imperial_diamond_ice = 0,
+  imperial_diamond_light = 0, imperial_diamond_poison = 0, imperial_diamond_ander = 0, imperial_onyx = 0, imperial_ruby = 0,
+  imperial_emerald = 0, imperial_zircon = 0, imperial_rhodolite = 0,
+
+  refined_imperial_amethyst = 0, refined_imperial_cyanite = 0, refined_imperial_diamond = 0, refined_imperial_diamond_fire = 0,
+  refined_imperial_diamond_ice = 0, refined_imperial_diamond_light = 0, refined_imperial_diamond_poison = 0,
+  refined_imperial_diamond_ander = 0, refined_imperial_onyx = 0, refined_imperial_ruby = 0, refined_imperial_emerald = 0,
+  refined_imperial_zircon = 0, refined_imperial_rhodolite = 0,
+
+  brilliant_imperial_amethyst = 0, brilliant_imperial_cyanite = 0, brilliant_imperial_diamond = 0, brilliant_imperial_diamond_fire = 0,
+  brilliant_imperial_diamond_ice = 0, brilliant_imperial_diamond_light = 0, brilliant_imperial_diamond_poison = 0,
+  brilliant_imperial_diamond_ander = 0, brilliant_imperial_onyx = 0, brilliant_imperial_ruby = 0, brilliant_imperial_emerald = 0,
+  brilliant_imperial_zircon = 0, brilliant_imperial_rhodolite = 0,
+
+  exquisite_imperial_amethyst = 0, exquisite_imperial_cyanite = 0, exquisite_imperial_diamond = 0, exquisite_imperial_diamond_fire = 0,
+  exquisite_imperial_diamond_ice = 0, exquisite_imperial_diamond_light = 0, exquisite_imperial_diamond_poison = 0,
+  exquisite_imperial_diamond_ander = 0, exquisite_imperial_onyx = 0, exquisite_imperial_ruby = 0, exquisite_imperial_emerald = 0,
+  exquisite_imperial_zircon = 0, exquisite_imperial_rhodolite = 0
+}
