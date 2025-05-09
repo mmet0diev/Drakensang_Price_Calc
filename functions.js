@@ -45,7 +45,7 @@ function andersToCash(anders = 0, country = "BG_EU") {
 
 
 // This function calculates the dust of a character according to the prices of dust packages (mid and big) specified for the specific country
-function shinyDustToCash(GemsCountsArguments = {}, country="BG_EU") {
+function shinyDustToCash(GemsCountsArguments = {}, country = "BG_EU") {
     let sum = 0;
     // Update the value for each gem in GemsCounts collection.
     let allGemsNames = Object.keys(GemsCountMap)
@@ -59,12 +59,16 @@ function shinyDustToCash(GemsCountsArguments = {}, country="BG_EU") {
     }
 
     let splitGemsNamesList = []
-    for (let item of gemsNamesList){
+    for (let item of gemsNamesList) {
         let splitElement = item.split("_")
         splitGemsNamesList.push(splitElement)
+        console.log(splitElement)
     }
 
     
+    for (let arr of splitGemsNamesList) {
+        console.log(shinyDustPerGemsMap[arr[0]][arr[1]])
+    }
 
     return sum;
 }

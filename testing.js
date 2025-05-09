@@ -17,4 +17,4 @@ import {premDaysToCash, andersToCash, shinyDustToCash} from "./functions.js"
 // console.log(`${andersToCash(5)}`)
 // console.log(`${andersToCash(6)}`)
 
-shinyDustToCash({"flawed_amethyst" : 1, "radiant_onyx" : 20});
+shinyDustToCash({"refined-trapezoid_amethyst" : 1, "radiant_onyx" : 20, "brilliant-imperial_onyx" : 2});
