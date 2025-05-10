@@ -70,7 +70,11 @@ function shinyDustToCash(GemsCountsArguments = {}, country = "BG_EU") {
         totalDust += shinyDustPerGemsMap[arr[0]][arr[1]] * GemsCountMap[arr[0]+"_"+arr[1]]
     }
     console.log(totalDust)
+
+    let midDustPackPrice = 105000;
+    let averageTimesMidDustinTotalDust = 0;
+
+    midDustPackPrice > totalDust ? averageTimesMidDustinTotalDust = midDustPackPrice / totalDust : averageTimesMidDustinTotalDust = totalDust / midDustPackPrice;
+    sum = averageTimesMidDustinTotalDust * countryPrices[country]["midDustPack"];
     return sum;
 }
-
-

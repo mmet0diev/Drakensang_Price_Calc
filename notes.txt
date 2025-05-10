@@ -85,8 +85,8 @@ Differnet currency prices for different Markets:
 Euro (Bulgaria):
 Prem (Normal) 1 month = 7.59€
 Prem (Deluxe) 1 month = 16.49€
-Medium Golden Chest of Dust = 7.59€
-Big Golden Chest of Dust = 37.99€
+Medium Golden Chest of Dust = 7.59€ (105k)
+Big Golden Chest of Dust = 37.99€ (530k)
 Name Change = 3.79€
 
 GBP (UK):
