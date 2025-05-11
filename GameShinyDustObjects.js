@@ -222,9 +222,6 @@ export const GemsCountMap = {
   "exquisite-imperial_rhodolite": 0
 };
 
-
-
-
 export const shinyDustPerGemsMap = {
   "flawed": {
     "amethyst": 1,
@@ -482,3 +479,14 @@ export const shinyDustPerGemsMap = {
     "rhodolite": 14000
   }
 };
+
+// Jewels object, it is composed of jewel tiers (norm to legendary), 
+// each key has an array value, where jewels[type][0] = total jewels of this type
+// and jewels[type][1] = jewel cost in shiny dust when melted
+export const Jewels = {
+  "norm": [0, 1500],
+  "green": [0, 4125],
+  "blue": [0, 8250],
+  "pink": [0, 13875],
+  "leg": [0, 21000]
+}

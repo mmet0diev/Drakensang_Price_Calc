@@ -1,5 +1,5 @@
 import { countryPrices } from "./CountryPrices.js";
-import { GemsCountMap, shinyDustPerGemsMap } from "./GameGems.js";
+import { GemsCountMap, shinyDustPerGemsMap, Jewels} from "./GameShinyDustObjects.js";
 export { premDaysToCash, andersToCash, shinyDustToCash };
 
 function checkValidCountryCode(country) {
