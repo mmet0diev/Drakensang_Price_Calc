@@ -17,11 +17,11 @@ import {premDaysToCash, andersToCash, shinyDustToCash} from "./functions.js"
 // console.log(`${andersToCash(5)}`)
 // console.log(`${andersToCash(6)}`)
 
-let totalSum = premDaysToCash(966, "BG_EU")
-console.log(`966 Premium days = ${premDaysToCash(966, "BG_EU")} euro`)
-console.log("Total Dust price = " + shinyDustToCash({"brilliant-trapezoid_amethyst" : 27, "refined-imperial_ruby" : 20, "exquisite-imperial_amethyst" : 2, 
-    "exquisite-imperial_onyx" : 2, "refined-imperial_diamond" : 10, "refined-imperial_cyanite" : 10, "imperial-zircon" : 10, "brilliant-imperial_emerald" : 3, "refined-imperial_emerald" : 7,
-"imperial_ruby" : 20, "imperial_onyx" : 10, "imperial_emerald" : 10, "brilliant-imperial_rhodolite" : 3, "refined-imperial_rhodolite" : 7, "refined-imperial_onyx" : 10}) + " euro")
+// let totalSum = premDaysToCash(966, "BG_EU")
+// console.log(`966 Premium days = ${premDaysToCash(966, "BG_EU")} euro`)
+// console.log("Total Dust price = " + shinyDustToCash({"brilliant-trapezoid_amethyst" : 27, "refined-imperial_ruby" : 20, "exquisite-imperial_amethyst" : 2, 
+//     "exquisite-imperial_onyx" : 2, "refined-imperial_diamond" : 10, "refined-imperial_cyanite" : 10, "imperial-zircon" : 10, "brilliant-imperial_emerald" : 3, "refined-imperial_emerald" : 7,
+// "imperial_ruby" : 20, "imperial_onyx" : 10, "imperial_emerald" : 10, "brilliant-imperial_rhodolite" : 3, "refined-imperial_rhodolite" : 7, "refined-imperial_onyx" : 10}) + " euro")
 
 console.log(andersToCash(500, "BG_EU"))
 // console.log(shinyDustToCash({"exquisite-imperial_onyx" : 50}));

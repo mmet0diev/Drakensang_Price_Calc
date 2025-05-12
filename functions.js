@@ -1,5 +1,5 @@
 import { countryPrices } from "./CountryPrices.js";
-import { GemsCountMap, shinyDustPerGemsMap, Jewels} from "./GameShinyDustObjects.js";
+import { GemsCountMap, shinyDustPerGemsMap, Jewels } from "./GameShinyDustObjects.js";
 export { premDaysToCash, andersToCash, shinyDustToCash };
 
 function checkValidCountryCode(country) {
@@ -65,9 +65,9 @@ function shinyDustToCash(GemsCountsArguments = {}, country = "BG_EU") {
     }
 
     let totalDust = 0;
-    
+
     for (let arr of splitGemsNamesList) {
-        totalDust += shinyDustPerGemsMap[arr[0]][arr[1]] * GemsCountMap[arr[0]+"_"+arr[1]]
+        totalDust += shinyDustPerGemsMap[arr[0]][arr[1]] * GemsCountMap[arr[0] + "_" + arr[1]]
     }
     // console.log(totalDust)
 
