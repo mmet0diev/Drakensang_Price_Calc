@@ -1,5 +1,5 @@
 import { countryPrices } from "./CountryPrices.js";
-import { GemsCountMap, shinyDustPerGemsMap, Jewels } from "./GameShinyDustObjects.js";
+import { shinyDustUnits} from "./ShinyDustObjects.js";
 export { premDaysToCash, andersToCash, shinyDustToCash };
 
 function checkValidCountryCode(country) {
@@ -44,37 +44,27 @@ function andersToCash(anders = 0, country = "BG_EU") {
 }
 
 
-// This function calculates the dust of a character according to the prices of dust packages (mid and big) specified for the specific country
-function shinyDustToCash(GemsCountsArguments = {}, country = "BG_EU") {
-    let sum = 0;
-    // Update the value for each gem in GemsCounts collection.
-    let allGemsNames = Object.keys(GemsCountMap)
-    let gemsNamesList = []
-    for (let item of allGemsNames) {
-        // console.log(GemsCountsArguments[item] + " equal to " + GemsCounts[item] + " ?")
-        if (GemsCountsArguments[item] > GemsCountMap[item]) {
-            GemsCountMap[item] = GemsCountsArguments[item];
-            gemsNamesList.push(item)
-        }
-    }
-
-    let splitGemsNamesList = []
-    for (let item of gemsNamesList) {
-        let splitElement = item.split("_")
-        splitGemsNamesList.push(splitElement)
-    }
+function shinyDustToCash(dustUnitsArgs = {}, country = "BG_EU") {
+    if (!checkValidCountryCode(country)) return 0;
 
     let totalDust = 0;
 
-    for (let arr of splitGemsNamesList) {
-        totalDust += shinyDustPerGemsMap[arr[0]][arr[1]] * GemsCountMap[arr[0] + "_" + arr[1]]
+    for (let unit in dustUnitsArgs) {
+        const count = dustUnitsArgs[unit];
+        const unitData = shinyDustUnits[unit];
+
+        if (!unitData) continue;
+
+        const costPerUnit = unitData[1];
+        totalDust += count * costPerUnit;
     }
-    // console.log(totalDust)
 
-    let midDustPackPrice = 105000;
-    let averageTimesMidDustinTotalDust = 0;
+    const midDustPackSize = 105000;
+    const midDustPackPrice = countryPrices[country]["midDustPack"];
+    const dustRatio = totalDust / midDustPackSize;
 
-    midDustPackPrice > totalDust ? averageTimesMidDustinTotalDust = midDustPackPrice / totalDust : averageTimesMidDustinTotalDust = totalDust / midDustPackPrice;
-    sum = averageTimesMidDustinTotalDust * countryPrices[country]["midDustPack"];
-    return sum.toFixed(2);
+    console.log(totalDust)
+
+    const totalPrice = dustRatio * midDustPackPrice;
+    return totalPrice.toFixed(2);
 }

@@ -23,5 +23,6 @@ import {premDaysToCash, andersToCash, shinyDustToCash} from "./functions.js"
 //     "exquisite-imperial_onyx" : 2, "refined-imperial_diamond" : 10, "refined-imperial_cyanite" : 10, "imperial-zircon" : 10, "brilliant-imperial_emerald" : 3, "refined-imperial_emerald" : 7,
 // "imperial_ruby" : 20, "imperial_onyx" : 10, "imperial_emerald" : 10, "brilliant-imperial_rhodolite" : 3, "refined-imperial_rhodolite" : 7, "refined-imperial_onyx" : 10}) + " euro")
 
-console.log(andersToCash(500, "BG_EU"))
-// console.log(shinyDustToCash({"exquisite-imperial_onyx" : 50}));
+// console.log(andersToCash(500, "BG_EU"))
+// console.log(shinyDustToCash({"exquisite-imperial_onyx" : [0, 50]}));
+console.log(shinyDustToCash({"exquisite-imperial_ruby" : 10, "flawed_amethyst" : 1}, "BG_EU"));
