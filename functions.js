@@ -1,6 +1,6 @@
 import { countryPrices } from "./CountryPrices.js";
 import { shinyDustUnits} from "./ShinyDustObjects.js";
-export { premDaysToCash, andersToCash, shinyDustToCash, IPsToCash};
+export { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders};
 
 function checkValidCountryCode(country) {
     const countryCodes = Object.keys(countryPrices)
@@ -70,12 +70,6 @@ function shinyDustToCash(dustUnitsArgs = {}, country = "BG_EU") {
 }
 
 
-function IPsToCash(ips, country = "BG_EU"){
-    let ipInAnder = ips*80;
-    console.log(ipInAnder)
-    let IPsAsAndersInAverageAnders;
-
-    ipInAnder > countryPrices[country]["averageAndermant"] ? IPsAsAndersInAverageAnders = ipInAnder / countryPrices[country]["averageAndermant"] 
-    : IPsAsAndersInAverageAnders = countryPrices[country]["averageAndermant"] / ipInAnder;
-    return IPsAsAndersInAverageAnders / countryPrices[country]["averageAnderCost"];
+function getIPsToAnders(ips){
+    return ips*80;
 }

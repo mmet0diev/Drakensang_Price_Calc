@@ -1,4 +1,4 @@
-import {premDaysToCash, andersToCash, shinyDustToCash, IPsToCash} from "./functions.js"
+import {premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders} from "./functions.js"
 
 // console.log(`15 days of premium in € = ${premDaysToCash(15, "BG_EU")}`);
 // console.log(`1 day of premium in  € = ${premDaysToCash(1, "BG_EU")}`);
@@ -27,5 +27,5 @@ import {premDaysToCash, andersToCash, shinyDustToCash, IPsToCash} from "./functi
 // console.log(shinyDustToCash({"exquisite-imperial_onyx" : [0, 50]}));
 // console.log(shinyDustToCash({"exquisite-imperial_ruby" : 10, "flawed_amethyst" : 1}, "BG_EU"));
 
-console.log(IPsToCash(8000, "BG_EU"))
-console.log(IPsToCash(10, "BG_EU"))
+console.log(getIPsToAnders(18000))
+console.log(andersToCash(getIPsToAnders(18000), "BG_EU"))
