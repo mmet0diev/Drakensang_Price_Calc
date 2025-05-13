@@ -73,8 +73,9 @@ function shinyDustToCash(dustUnitsArgs = {}, country = "BG_EU") {
 function IPsToCash(ips, country = "BG_EU"){
     let ipInAnder = ips*80;
     console.log(ipInAnder)
-    let res;
-    ipInAnder > countryPrices[country]["averageAndermant"] ? res = ((ipInAnder / countryPrices[country]["averageAndermant"])*countryPrices[country]["averageAnderCost"]).toFixed(2)
-    : res = ((countryPrices[country]["averageAndermant"] / ipInAnder)*countryPrices[country]["averageAnderCost"]).toFixed(2);
-    return res;
+    let IPsAsAndersInAverageAnders;
+
+    ipInAnder > countryPrices[country]["averageAndermant"] ? IPsAsAndersInAverageAnders = ipInAnder / countryPrices[country]["averageAndermant"] 
+    : IPsAsAndersInAverageAnders = countryPrices[country]["averageAndermant"] / ipInAnder;
+    return IPsAsAndersInAverageAnders / countryPrices[country]["averageAnderCost"];
 }
