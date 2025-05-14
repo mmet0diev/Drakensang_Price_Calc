@@ -1,5 +1,24 @@
-p, h1, h2, h3, h4, h5, h6{
-    color: cadetblue;
-    /* border-color: blue; */
-    text-shadow: 1rem, 1rem, blue;
+body {
+    background-color: lightgray;
+}
+
+.p1{
+    font-size: 1.2rem;
+    font-family:monospace;
+    color: coral;
+    font-weight: bold;
+    text-shadow: 0.1rem -0.1rem darkblue;
+}
+
+.p2{
+    font-size: 1.05rem;
+    font-family:monospace;
+    color: lightcoral;
+    /* font-weight: bold; */
+    text-shadow: 0.1rem -0.1rem darkblue;
+}
+
+.main_page_title{
+    text-align: center;
+    background-color:indigo;
 }
