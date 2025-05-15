@@ -5,5 +5,5 @@ import {premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders} from "./f
 // }
 
 window.displayIpsInCash = function(page_element){
-    document.getElementById(page_element).textContent = parseInt(getIPsToAnders(2000))
+    document.getElementById(page_element).textContent = getIPsToAnders(2000)
 }
