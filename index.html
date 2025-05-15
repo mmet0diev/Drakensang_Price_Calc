@@ -15,11 +15,19 @@
         <p class="p1">Price Calculator for Drakensang Online</p>
     </div>
     <div class="Calculator_section">
-        <p class="p2" id="prem_days_in_cash">text</p>
-        <button onclick="displayPremDaysToCashRes('prem_days_in_cash')">calculate prem days</button>
+        <div>
+            <p class="p2" id="displayPremDaysInCash">Prem days in current currency: </p>
+            <input id="prem_days_input">
+            <button onclick="displayPremDaysToCash('displayPremDaysInCash', 'prem_days_input')">enter prem days</button>
+        </div>
+        <div>
+            <p class="p2" id="displayShinyDustInCash">Total Shiny Dust in current currency: </p>
+            <input id="prem_days_in_cash">
+        <button onclick="displayShinydustToCash('displayShinyDustInCash', 'prem_days_in_cash')">enter shiny Dust</button>
+        </div>
         
-        <p class="p2" id="ips_in_cash">text</p>
-        <button onclick="displayIpsInCash('ips_in_cash')">convert IPs to Anders</button>
+        
+
     </div>
 </body>
 

@@ -71,5 +71,5 @@ function shinyDustToCash(dustUnitsArgs = {}, country = "BG_EU") {
 
 
 function getIPsToAnders(ips){
-    return ips*80;
+    return ips*0;
 }

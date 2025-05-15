@@ -22,3 +22,9 @@ body {
     text-align: center;
     background-color:indigo;
 }
+
+button {
+    text-decoration: coral;
+    width: 8%;
+    height: 2rem;
+}
