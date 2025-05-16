@@ -78,3 +78,12 @@ function shinyDustToCashV2(dustUnitsArgs = {}, country = "BG_EU") {
 function getIPsToAnders(ips){
     return ips*0;
 }
+
+
+function TotalPriceSum(args = []){
+    let sum = 0;
+    for (let i=0; i<args.length; i++){
+        sum+= parseFloat(args[i])
+    }
+    return sum
+}

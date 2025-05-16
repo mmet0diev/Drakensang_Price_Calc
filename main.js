@@ -1,20 +1,32 @@
-import {premDaysToCash, andersToCash, shinyDustToCashV2, shinyDustToCashV1, getIPsToAnders} from "./functions.js"
+import { premDaysToCash, andersToCash, shinyDustToCashV2, shinyDustToCashV1, getIPsToAnders } from "./functions.js"
 
-window.displayPremDaysToCash = function(elem1, elem2){
-    const elementId = document.getElementById(elem1);
-    const enteredPremDays = document.getElementById(elem2).value;
-    // elementId.textContent = null;
-    elementId.textContent = `Prem days in current currency: ${premDaysToCash(enteredPremDays)} €`;
+window.displayPremDaysInCash = function () {
+    const enteredPremDays = document.getElementById("prem_days_input").value;
+    const premDaysField = document.getElementById("premDaysInCashID");
+    premDaysField.textContent = `Prem days in current currency: ${premDaysToCash(enteredPremDays)} €`;
 }
 
-window.displayShinydustToCash = function(elem1, elem2){
-    const elementId = document.getElementById(elem1); // displayShinydustToCash
-    const enteredDust = document.getElementById(elem2).value; // value of shinydust_input
-
-    elementId.textContent = `Total Shiny Dust in current currency: ${shinyDustToCashV1(enteredDust)} €`;
+window.displayShinydustInCash = function () {
+    const enteredDust = document.getElementById("shinydust_input").value;
+    const shinydustField = document.getElementById("shinydustInCashID");
+    shinydustField.textContent = `Total Shiny Dust in current currency: ${shinyDustToCashV1(enteredDust)} €`;
 }
+
+
+window.displayAndermantsInCash = function () {
+    const enteredAnders = document.getElementById("andermants_input").value;
+    const andermantsField = document.getElementById("andermantsInCashID");
+    andermantsField.textContent = `Total Andermants in current currency: ${andersToCash(enteredAnders)} €`;
+}
+
+window.displayTotalAccPrice = function() {
+    document.getElementById("totalAccPrice").textContent = `Total account price = ${TotalPriceSum().toFixed(2)} €`
+}
+
+
+
 
 // window.displayIpsInCash = function(elem1, elem2){
-//     let enteredValue = 
+//     let enteredValue =
 //     document.getElementById(elem1, elem2).value = getIPsToAnders(2000)
 // }
