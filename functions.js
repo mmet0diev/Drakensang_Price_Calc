@@ -1,6 +1,6 @@
 import { countryPrices } from "./CountryPrices.js";
 import { shinyDustUnits} from "./ShinyDustObjects.js";
-export { premDaysToCash, andersToCash, shinyDustToCashV2, getIPsToAnders, shinyDustToCashV1};
+export { premDaysToCash, andersToCash, shinyDustToCashV2, getIPsToAnders, shinyDustToCashV1, TotalPriceSum};
 
 function checkValidCountryCode(country) {
     const countryCodes = Object.keys(countryPrices)

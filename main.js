@@ -20,10 +20,11 @@ window.displayAndermantsInCash = function () {
 }
 
 window.displayTotalAccPrice = function() {
-    document.getElementById("totalAccPrice").textContent = `Total account price = ${TotalPriceSum().toFixed(2)} €`
+    const premDaysPrice = parseFloat(document.getElementById("prem_days_input").value);
+    const shinyDustPrice = parseFloat(document.getElementById("shinydust_input").value);
+    const enteredAnders = parseFloat(document.getElementById("andermants_input").value);
+    document.getElementById("totalAccPrice").textContent = `Total account price = ${TotalPriceSum(premDaysPrice, shinyDustPrice, enteredAnders).toFixed(2)} €`
 }
-
-
 
 
 // window.displayIpsInCash = function(elem1, elem2){
