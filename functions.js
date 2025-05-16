@@ -1,6 +1,6 @@
 import { countryPrices } from "./CountryPrices.js";
 import { shinyDustUnits} from "./ShinyDustObjects.js";
-export { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders};
+export { premDaysToCash, andersToCash, shinyDustToCashV2, getIPsToAnders, shinyDustToCashV1};
 
 function checkValidCountryCode(country) {
     const countryCodes = Object.keys(countryPrices)
@@ -43,8 +43,13 @@ function andersToCash(anders = 0, country = "BG_EU") {
     return (currAndersInAverageAnders * medianAnderCost).toFixed(2);
 }
 
+function shinyDustToCashV1(totalDust = 0, country = "BG_EU"){
+    if (!checkValidCountryCode(country)) return 0;
+    let res = totalDust / 105000 * countryPrices[country]["midDustPack"];
+    return res.toFixed(2);
+}
 
-function shinyDustToCash(dustUnitsArgs = {}, country = "BG_EU") {
+function shinyDustToCashV2(dustUnitsArgs = {}, country = "BG_EU") {
     if (!checkValidCountryCode(country)) return 0;
 
     let totalDust = 0;
@@ -58,12 +63,12 @@ function shinyDustToCash(dustUnitsArgs = {}, country = "BG_EU") {
         const costPerUnit = unitData[1];
         totalDust += count * costPerUnit;
     }
+    
+    console.log(totalDust);
 
     const midDustPackSize = 105000;
     const midDustPackPrice = countryPrices[country]["midDustPack"];
     const dustRatio = totalDust / midDustPackSize;
-
-    console.log(totalDust)
 
     const totalPrice = dustRatio * midDustPackPrice;
     return totalPrice.toFixed(2);
