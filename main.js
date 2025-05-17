@@ -1,4 +1,4 @@
-import { premDaysToCash, andersToCash, shinyDustToCashV2, shinyDustToCashV1, getIPsToAnders } from "./functions.js"
+import { premDaysToCash, andersToCash, shinyDustToCashV2, shinyDustToCashV1, getIPsToAnders, TotalPriceSum} from "./functions.js"
 
 window.displayPremDaysInCash = function () {
     const enteredPremDays = document.getElementById("prem_days_input").value;
@@ -19,12 +19,19 @@ window.displayAndermantsInCash = function () {
     andermantsField.textContent = `Total Andermants in current currency: ${andersToCash(enteredAnders)} €`;
 }
 
-window.displayTotalAccPrice = function() {
-    const premDaysPrice = document.getElementById("prem_days_input").value;
-    const shinyDustPrice = document.getElementById("shinydust_input").value;
-    const enteredAnders = document.getElementById("andermants_input").value;
-    document.getElementById("totalAccPrice").textContent = `Total account price = ${TotalPriceSum(premDaysPrice, shinyDustPrice, enteredAnders).toFixed(2)} €`
+window.displayTotalAccPrice = function () {
+    const premDays = document.getElementById("prem_days_input").value || 0;
+    const shinyDust = document.getElementById("shinydust_input").value || 0;
+    const anders = document.getElementById("andermants_input").value || 0;
+
+    const premDaysPrice = premDaysToCash(premDays) || 0;
+    const shinyDustPrice = shinyDustToCashV1(shinyDust) || 0;
+    const andersPrice = andersToCash(anders) || 0;
+
+    const total = TotalPriceSum([premDaysPrice, shinyDustPrice, andersPrice]);
+    document.getElementById("totalAccPrice").textContent = `Total account price = ${total.toFixed(2)} €`;
 }
+
 
 
 // window.displayIpsInCash = function(elem1, elem2){
