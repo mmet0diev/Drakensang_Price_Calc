@@ -9,9 +9,9 @@ import {premDaysToCash, andersToCash, shinyDustToCashV1, shinyDustToCashV2, getI
 // console.log(`174 day of premium in  € (UK price) = ${premDaysToCash(174, "UK_EU")}`);
 // console.log(`980 day of premium in  € (UK price) = ${premDaysToCash(980, "UK_EU")}`);
 
-console.log(`${andersToCash(12121)}`)
-console.log(`${andersToCash(35000)}`)
-console.log(`${andersToCash(2)}`)
+// console.log(`${andersToCash(12121)}`)
+// console.log(`${andersToCash(35000)}`)
+// console.log(`${andersToCash(2)}`)
 // console.log(`${andersToCash(3)}`)
 // console.log(`${andersToCash(4)}`)
 // console.log(`${andersToCash(5)}`)
@@ -32,3 +32,8 @@ console.log(`${andersToCash(2)}`)
 
 // console.log(shinyDustToCashV2({"exquisite-imperial_ruby" : 10}))
 // console.log(shinyDustToCashV2({"sacred_amethyst" : 10}))
+
+
+
+shinyDustToCashV2({"refined-imperial_ruby" : 20, "imperial-ruby" : 20, "exquisite-imperial_amethyst" : 2, "brilliant-imperial_amethyst" : 27, "refined-imperial_cyanite" : 10, 
+    "refined-imperial_diamond" : 10, "exquisite-imperial_onyx" : 2, "brilliant-imperial_onyx" : 8, "refined-imperial_onyx" : 20, "imperial-emerald" : 20})
