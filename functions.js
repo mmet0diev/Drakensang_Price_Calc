@@ -27,20 +27,15 @@ The averageAnders is the sum of the anders of all 7 options to purchase anderman
 The averageAnderCost is the average (in money) of all 7 purchase options in the DSO shop divided by 7.
 */
 function andersToCash(anders = 0, country = "BG_EU") {
-    let medianAnderCost;
-    let averageAnders;
-    if (checkValidCountryCode(country)) {
-        medianAnderCost = countryPrices[country].averageAnderCost;
-        averageAnders = countryPrices[country].averageAndermant;
-    } else {
-        medianAnderCost = undefined;
-        averageAnders = undefined;
-    }
+    if (!checkValidCountryCode(country)) return "0.00";
 
-    let currAndersInAverageAnders = 0;
-    anders < averageAnders ? currAndersInAverageAnders = anders / averageAnders
-        : currAndersInAverageAnders = averageAnders / anders;
-    return (currAndersInAverageAnders * medianAnderCost).toFixed(2);
+    // const { averageAndermant, averageAnderCost } = countryPrices[country];
+    const avrgAndersNum = countryPrices[country]["averageAndermant"];
+    const avrgAndersPrice = countryPrices[country]["averageAnderCost"];
+
+    const res = (anders / avrgAndersNum) * avrgAndersPrice;
+
+    return res.toFixed(2);
 }
 
 function shinyDustToCashV1(totalDust = 0, country = "BG_EU"){
