@@ -1,0 +1,32 @@
+.TestGemsSection{
+    display: flex;
+}
+
+.myTable {
+    table-layout: fixed;
+    width: 100%;
+    border: 2px solid black;
+}
+
+.myTable th, .myTable td {
+    width: 5rem;
+    border: 1px solid black;
+}
+
+.GemTypes th{
+    padding-right: 2rem;
+    border: 1px solid black;
+}
+
+input{
+    max-width: 7rem;
+    max-height: 50%;
+}
+
+td{
+    text-align: center;
+}
+
+#gemscell{
+    border: 1px solid black;
+}

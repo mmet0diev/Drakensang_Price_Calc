@@ -2,6 +2,33 @@ body {
     background-color: lightgray;
 }
 
+.navbar{
+    border: 0.2em solid black;
+    background-color: darkturquoise;
+    color: blue;
+    text-shadow: 0.05rem 0.05rem red;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.navbar a {
+    color: blue;
+    text-shadow: 0.05rem 0.05rem red;
+    text-decoration: none; /* remove underline */
+    padding: 0.2rem;
+    display: inline-block;
+    font-size: 1.1rem;
+    /* transition: all 0.2s ease-in-out; */
+}
+
+.navbar a:hover {
+    color: red;
+    text-shadow: 0.05rem -0.05rem blue;
+    font-size: 1.1rem;
+    border: 0.1em solid black;
+    background-color: darkturquoise;
+}
+
 .p1{
     font-size: 1.2rem;
     font-family:monospace;
