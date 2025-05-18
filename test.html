@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="test.css">
     <script type="module" src="main.js"></script>
+    <script type="module" src="testing.js"></script>
 </head>
 
 <body>
@@ -16,8 +17,8 @@
         <a href="index.html" id="homepage">Home</a>
         <a href="test.html" id="page2">Test Page</a>
     <div class="TestGemsSection">
-    <table class="myTable">
-        <thead>
+    <table class="myTable" id="tableId">
+        <thead id="theadId1">
             <tr class="GemTypes">
                 <th id="gemscell"><strong>GEMS:</strong></th>
                 <th>Amethyst</th>
@@ -327,7 +328,12 @@
         </tbody>
     </table> 
     </div>
-    <button onclick="">Calculate</button>
+    <div>
+        <p class="p2" id="total_dust">Total dust calculated: </p>
+        <p class="p2" id="total_cash">Total dust in cash: </p>
+        <button onclick=null>Calculate</button>
+    </div>
+    
 </body>
 
 </html>

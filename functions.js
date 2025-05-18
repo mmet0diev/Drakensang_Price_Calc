@@ -83,24 +83,18 @@ function TotalPriceSum(args = []){
     return sum
 }
 
-export function calcTotalDustAndCash(valuesArr = [[]]) {
-  let totalDust = 0;
-  let totalCash = 0;
+export function getTotalDustAndDustToCash(gemsJewelsCountsArray = [[]]) {
+    let totDust = 0;
+    let totPrice = 0;
+    const numregex = /[0-9]/
 
-  // Start from 1 to skip header row, assume header row exists
-  for (let i = 1; i < valuesArr.length; i++) {
-    // For each row (tier)
-    for (let j = 1; j < valuesArr[i].length; j++) {
-      const gemKey = valuesArr[0][j].split(" ").toLowerCase();       // gem key from header row
-      const quantity = Number(valuesArr[i][j]); // quantity input, coerced to number
-      
-      if (quantity && shinyDustUnits[gemKey]) {
-        const [dustCost, cashCost] = shinyDustUnits[gemKey];
-        totalDust += quantity * dustCost;
-        totalCash += quantity * cashCost;
-      }
+    for (let i=1; i<gemsJewelsCountsArray[1].length; i++){
+        for(let j=1; j<gemsJewelsCountsArray[1][1].length; j++){
+            if(numregex.test(gemsJewelsCountsArray[i][j])){
+                totDust+=gemsJewelsCountsArray[i][j];
+            }
+        }
     }
-  }
-
-  return { totalDust, totalCash };
+    
+    return 0
 }

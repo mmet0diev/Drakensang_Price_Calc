@@ -204,3 +204,26 @@ Averange of andermants (BG):
   exquisite_imperial_diamond_ander = 0, exquisite_imperial_onyx = 0, exquisite_imperial_ruby = 0, exquisite_imperial_emerald = 0,
   exquisite_imperial_zircon = 0, exquisite_imperial_rhodolite = 0
 }
+
+
+
+
+
+
+
+gemsAndJewelsArray:
+
+
+1 Amethyst
+2 Cyanite
+3 Diamond
+4 Diamond (Fire)
+5 Diamond (Ice)
+6 Diamond (Lightning)
+7 Diamond (Poison)
+8 Diamond (Andermagic)
+9 Ruby
+10 Onyx
+11 Emerald
+12 Zircon
+13 Rhodolite
