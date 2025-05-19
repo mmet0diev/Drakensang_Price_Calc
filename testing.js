@@ -40,4 +40,4 @@ import {premDaysToCash, andersToCash, shinyDustToCashV1, shinyDustToCashV2, getI
 
 
 
-console.log(document.querySelector("tr")[0].id)
+console.log(document.querySelector("myTable")[0].id)
