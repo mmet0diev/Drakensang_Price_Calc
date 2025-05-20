@@ -19,12 +19,14 @@
 }
 
 input{
-    max-width: 7rem;
+    max-width: 5.5rem;
     max-height: 50%;
 }
 
-td{
+th, td{
     text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 #gemscell{
