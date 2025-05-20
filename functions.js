@@ -83,18 +83,6 @@ function TotalPriceSum(args = []){
     return sum
 }
 
-export function getTotalDustAndDustToCash(gemsJewelsCountsArray = [[]]) {
-    let totDust = 0;
-    let totPrice = 0;
-    const numregex = /[0-9]/
+function getTotalDustOfGems(GemTypes = {}){
 
-    for (let i=1; i<gemsJewelsCountsArray[1].length; i++){
-        for(let j=1; j<gemsJewelsCountsArray[1][1].length; j++){
-            if(numregex.test(gemsJewelsCountsArray[i][j])){
-                totDust+=gemsJewelsCountsArray[i][j];
-            }
-        }
-    }
-    
-    return 0
 }
