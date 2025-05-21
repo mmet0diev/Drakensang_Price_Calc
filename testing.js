@@ -53,19 +53,25 @@ import {GemsTypes} from "./ShinyDustObjects.js";
 
 window.getAllTableCellsContent = function(){
     const mytable = document.getElementById("myTable");
-    const gemRarityRows = mytable.querySelectorAll("tr");
-    let cellValues = []
+    const gemRarityRowsList = mytable.querySelectorAll("tr");
+    const gemTypeRowsList = mytable.querySelectorAll(".GemTypes th");
 
-    gemRarityRows.forEach((rows, rowIndex) => {
+    // Convert gemTypeRowsList to array and assign the items starting from index 1 to 
+    let gemTypesArr = Array.from(gemTypeRowsList).slice(1, gemTypeRowsList.length);
+    let cellValuesArr = [];
+    let cellIdsArr = []
+
+    gemRarityRowsList.forEach((rows) => {
         const gemRows = rows.querySelectorAll("td");
+        cellIdsArr.push(rows.id)
         gemRows.forEach(inpt => {
-            let cellContent = inpt.querySelector('input')
-            cellValues.push(cellContent)
+            let cellContent = inpt.querySelector('input').value
+            cellValuesArr.push(cellContent)
         });
     });
 
-    console.log(cellValues.join(" "))
+    console.log(cellIdsArr)
 
 }
 
-getAllTableCellsContent()
+
