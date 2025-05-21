@@ -1,4 +1,5 @@
-import {premDaysToCash, andersToCash, shinyDustToCashV1, shinyDustToCashV2, getIPsToAnders} from "./functions.js"
+import {premDaysToCash, andersToCash, shinyDustToCashV1, shinyDustToCashV2, getIPsToAnders} from "./functions.js";
+import {GemsTypes} from "./ShinyDustObjects.js";
 
 // console.log(`15 days of premium in € = ${premDaysToCash(15, "BG_EU")}`);
 // console.log(`1 day of premium in  € = ${premDaysToCash(1, "BG_EU")}`);
@@ -38,9 +39,26 @@ import {premDaysToCash, andersToCash, shinyDustToCashV1, shinyDustToCashV2, getI
 // shinyDustToCashV2({"refined-imperial_ruby" : 20, "imperial-ruby" : 20, "exquisite-imperial_amethyst" : 2, "brilliant-imperial_amethyst" : 27, "refined-imperial_cyanite" : 10, 
 //     "refined-imperial_diamond" : 10, "exquisite-imperial_onyx" : 2, "brilliant-imperial_onyx" : 8, "refined-imperial_onyx" : 20, "imperial-emerald" : 20})
 
+// window.getAllTableCellsContent = function(){
+//     const mytable = document.getElementById("myTable");
+//     const rows = mytable.querySelectorAll("tr");
+
+//     rows.forEach((rows, rowIndex) => {
+//         const cells = rows.querySelectorAll("th, td");
+//         cells.forEach((cell, cellindex) => {
+//             console.log(`Row: ${rows.id}, ${rowIndex}\n Cell: ${cell.id}, ${cellindex}\n\n` )
+//         })
+//     });
+// }
+
 window.getAllTableCellsContent = function(){
-    const mytable = document.querySelector("table");
-    console.log(mytable[0])
+    const mytable = document.getElementById("myTable");
+    const rows = mytable.querySelectorAll("tr");
+    const rowsArr = Array.from(rows)
+    
+    console.log(rows)
+    console.log(rowsArr)
+
 }
 
 getAllTableCellsContent()

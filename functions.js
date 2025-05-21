@@ -84,5 +84,5 @@ function TotalPriceSum(args = []){
 }
 
 function getTotalDustOfGems(GemTypes = {}){
-
+    
 }
