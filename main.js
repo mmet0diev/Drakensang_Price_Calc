@@ -1,4 +1,4 @@
-import { premDaysToCash, andersToCash, shinyDustToCashV2, shinyDustToCashV1, getIPsToAnders, TotalPriceSum } from "./functions.js"
+import { premDaysToCash, andersToCash, shinyDustToCashV1, getIPsToAnders, TotalPriceSum } from "./functions.js"
 
 window.displayPremDaysInCash = function () {
     const enteredPremDays = document.getElementById("prem_days_input").value;

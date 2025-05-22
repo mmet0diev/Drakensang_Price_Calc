@@ -1,6 +1,6 @@
 import { countryPrices } from "./CountryPrices.js";
-import { shinyDustUnits} from "./ShinyDustObjects.js";
-export { premDaysToCash, andersToCash, shinyDustToCashV2, getIPsToAnders, shinyDustToCashV1, TotalPriceSum};
+import { GemsPseudoDB } from "./ShinyDustObjects.js";
+export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCashV1, TotalPriceSum};
 
 function checkValidCountryCode(country) {
     const countryCodes = Object.keys(countryPrices)
@@ -44,32 +44,6 @@ function shinyDustToCashV1(totalDust = 0, country = "BG_EU"){
     return res.toFixed(2);
 }
 
-function shinyDustToCashV2(dustUnitsArgs = {}, country = "BG_EU") {
-    if (!checkValidCountryCode(country)) return 0;
-
-    let totalDust = 0;
-
-    for (let unit in dustUnitsArgs) {
-        const count = dustUnitsArgs[unit];
-        const unitData = shinyDustUnits[unit];
-
-        if (!unitData) continue;
-
-        const costPerUnit = unitData[1];
-        totalDust += count * costPerUnit;
-    }
-    
-    console.log(totalDust);
-
-    const midDustPackSize = 105000;
-    const midDustPackPrice = countryPrices[country]["midDustPack"];
-    const dustRatio = totalDust / midDustPackSize;
-
-    const totalPrice = dustRatio * midDustPackPrice;
-    return totalPrice.toFixed(2);
-}
-
-
 function getIPsToAnders(ips){
     return ips*0;
 }
@@ -86,3 +60,29 @@ function TotalPriceSum(args = []){
 function getTotalDustOfGems(GemTypes = {}){
     
 }
+
+
+// function shinyDustToCashV2(dustUnitsArgs = {}, country = "BG_EU") {
+//     if (!checkValidCountryCode(country)) return 0;
+
+//     let totalDust = 0;
+
+//     for (let unit in dustUnitsArgs) {
+//         const count = dustUnitsArgs[unit];
+//         const unitData = shinyDustUnits[unit];
+
+//         if (!unitData) continue;
+
+//         const costPerUnit = unitData[1];
+//         totalDust += count * costPerUnit;
+//     }
+    
+//     console.log(totalDust);
+
+//     const midDustPackSize = 105000;
+//     const midDustPackPrice = countryPrices[country]["midDustPack"];
+//     const dustRatio = totalDust / midDustPackSize;
+
+//     const totalPrice = dustRatio * midDustPackPrice;
+//     return totalPrice.toFixed(2);
+// }
