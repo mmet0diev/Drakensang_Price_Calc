@@ -58,40 +58,44 @@ window.getAllTableCellsContent = function () {
 
     // Convert gemTypeRowsList to array and assign the items starting from index 1 to 
     let gemTypesArr = Array.from(gemTypeRowsList).slice(1, gemTypeRowsList.length);
-    let gemsRarityArr = Array.from(gemRarityRowsList).slice(1, gemRarityRowsList.length)
+    let gemsRarityArr = Array.from(gemRarityRowsList).slice(1, gemRarityRowsList.length);
 
-    // Update GemsPseudoDB gem count value
+    let countsArr = [];
+    // Add each gem counts val to countsArr
     gemRarityRowsList.forEach((rows) => {
         const gemRows = rows.querySelectorAll("td");
-        
-        gemRows.forEach(td => {
+        gemRows.forEach((td) => {
             let cellValue = td.querySelector('input').value;
-
+            if (cellValue != null && cellValue != 0) {
+                countsArr.push(Number(cellValue));
+            } else {
+                countsArr.push(0);
+            }
         })
-
     })
 
+    let totalDust = 0;
+    let countsArrIndex = 0;
+
+    // Update count in GemsPseudoDB and 
     for (let i = 0; i < gemsRarityArr.length; i++) {
         for (let j = 0; j < gemTypesArr.length; j++) {
-            let currGemMeltVal = Number(GemsPseudoDB[`${gemsRarityArr[i].id}_${gemTypesArr[j].id}`][1])
-            let currGemCell = `${gemsRarityArr[i].id}_${gemTypesArr[j].id} = ${currGemMeltVal}`
-            console.log(`${gemsRarityArr[i].id}_${gemTypesArr[j].id} = ${currGemMeltVal}\n`)
-        }
+            let currCount = countsArr[countsArrIndex];
+            GemsPseudoDB[`${gemsRarityArr[i].id}_${gemTypesArr[j].id}`][0] = currCount;
 
+            // console.log(currCount)
+            
+            let gemID = `${gemsRarityArr[i].id}_${gemTypesArr[j].id}`;
+            let currGemMeltVal = GemsPseudoDB[gemID][1];
+
+            totalDust+=currCount*currGemMeltVal;
+            countsArrIndex++;
+        }
     }
 
-
+    document.getElementById("total_dust").innerHTML = `Total dust calculated: ${totalDust}`
     // console.log(gemTypesArr)
     // console.log(gemsRarityArr)
-
-    // gemRarityRowsList.forEach((rows) => {
-    //     const gemRows = rows.querySelectorAll("td");
-    //     cellIdsArr.push(rows.id)
-    //     gemRows.forEach(inpt => {
-    //         let cellContent = inpt.querySelector('input').value
-    //         cellValuesArr.push(cellContent)
-    //     });
-    // });
 }
 
 
