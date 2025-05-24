@@ -34,7 +34,7 @@ window.displayTotalAccPrice = function () {
 }
 
 
-window.setTotalDust = function () {
+window.displayCashAndDustRes = function () {
     const table = document.getElementById("myTable");
 
     const gemRarityRowsList = table.querySelectorAll("tr");
