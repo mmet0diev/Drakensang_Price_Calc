@@ -1,4 +1,4 @@
-import { premDaysToCash, andersToCash, shinyDustToCashV1, getIPsToAnders, TotalPriceSum } from "./functions.js"
+import { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPriceSum, calculateTotalDust, calculateTotalPrice } from "./functions.js"
 import { GemsPseudoDB } from "./ShinyDustObjects.js";
 
 window.displayPremDaysInCash = function () {
@@ -10,7 +10,7 @@ window.displayPremDaysInCash = function () {
 window.displayShinydustInCash = function () {
     const enteredDust = document.getElementById("shinydust_input").value;
     const shinydustField = document.getElementById("shinydustInCashID");
-    shinydustField.textContent = `Total Shiny Dust in current currency: ${shinyDustToCashV1(enteredDust)} €`;
+    shinydustField.textContent = `Total Shiny Dust in current currency: ${shinyDustToCash(enteredDust)} €`;
 }
 
 
@@ -26,7 +26,7 @@ window.displayTotalAccPrice = function () {
     const anders = document.getElementById("andermants_input").value || 0;
 
     const premDaysPrice = premDaysToCash(premDays) || 0;
-    const shinyDustPrice = shinyDustToCashV1(shinyDust) || 0;
+    const shinyDustPrice = shinyDustToCash(shinyDust) || 0;
     const andersPrice = andersToCash(anders) || 0;
 
     const total = TotalPriceSum([premDaysPrice, shinyDustPrice, andersPrice]);
@@ -35,44 +35,29 @@ window.displayTotalAccPrice = function () {
 
 
 window.setTotalDust = function () {
-    const mytable = document.getElementById("myTable");
-    const gemRarityRowsList = mytable.querySelectorAll("tr");
-    const gemTypeRowsList = mytable.querySelectorAll(".GemTypes th");
+    const table = document.getElementById("myTable");
 
-    // Convert gemTypeRowsList to array and assign the items starting from index 1 to 
-    let gemTypesArr = Array.from(gemTypeRowsList).slice(1, gemTypeRowsList.length);
-    let gemsRarityArr = Array.from(gemRarityRowsList).slice(1, gemRarityRowsList.length);
+    const gemRarityRowsList = table.querySelectorAll("tr");
+    const gemTypeHeaders = table.querySelectorAll(".GemTypes th");
 
-    let countsArr = [];
-    // Add each gem counts val to countsArr
-    gemRarityRowsList.forEach((rows) => {
-        const gemRows = rows.querySelectorAll("td");
-        gemRows.forEach((td) => {
-            let cellValue = td.querySelector('input').value;
-            if (cellValue != null && cellValue != 0) {
-                countsArr.push(Number(cellValue));
-            } else {
-                countsArr.push(0);
-            }
-        })
-    })
+    const gemTypesArr = Array.from(gemTypeHeaders).slice(1);
+    const gemsRarityArr = Array.from(gemRarityRowsList).slice(1);
 
-    let totalDust = 0;
-    let countsArrIndex = 0;
+    const countsArr = [];
 
-    // Update count in GemsPseudoDB and 
-    for (let i = 0; i < gemsRarityArr.length; i++) {
-        for (let j = 0; j < gemTypesArr.length; j++) {
-            let currCount = countsArr[countsArrIndex];
-            GemsPseudoDB[`${gemsRarityArr[i].id}_${gemTypesArr[j].id}`][0] = currCount;
-            
-            let gemID = `${gemsRarityArr[i].id}_${gemTypesArr[j].id}`;
-            let currGemMeltVal = GemsPseudoDB[gemID][1];
+    gemsRarityArr.forEach(row => {
+        const tds = row.querySelectorAll("td");
+        tds.forEach(td => {
+            const input = td.querySelector("input");
+            const value = input ? Number(input.value) : 0;
+            countsArr.push(isNaN(value) ? 0 : value);
+        });
+    });
 
-            totalDust+=currCount*currGemMeltVal;
-            countsArrIndex++;
-        }
-    }
+    const totalDust = calculateTotalDust(gemsRarityArr, gemTypesArr, countsArr);
+    const dustInCashTotal = calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr);
 
-    document.getElementById("total_dust").innerHTML = `Total dust calculated: ${totalDust}`
-}
+    document.getElementById("total_dust").innerHTML = `Total dust calculated: ${totalDust}`;
+    document.getElementById("total_cash").innerHTML = `Total dust in cash: ${dustInCashTotal}`
+};
+

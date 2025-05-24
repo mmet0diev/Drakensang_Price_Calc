@@ -1,6 +1,6 @@
 import { countryPrices } from "./CountryPrices.js";
 import { GemsPseudoDB } from "./ShinyDustObjects.js";
-export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCashV1, TotalPriceSum};
+export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCash, TotalPriceSum, calculateTotalDust, calculateTotalPrice};
 
 function checkValidCountryCode(country) {
     const countryCodes = Object.keys(countryPrices)
@@ -38,7 +38,7 @@ function andersToCash(anders = 0, country = "BG_EU") {
     return res.toFixed(2);
 }
 
-function shinyDustToCashV1(totalDust = 0, country = "BG_EU"){
+function shinyDustToCash(totalDust = 0, country = "BG_EU"){
     if (!checkValidCountryCode(country)) return 0;
     let res = totalDust / 105000 * countryPrices[country]["midDustPack"];
     return res.toFixed(2);
@@ -57,32 +57,47 @@ function TotalPriceSum(args = []){
     return sum
 }
 
-function getTotalDustOfGems(GemTypes = {}){
-    
+function calculateTotalDust(gemsRarityArr, gemTypesArr, countsArr) {
+    let totalDust = 0;
+    let index = 0;
+
+    for (let i = 0; i < gemsRarityArr.length; i++) {
+        for (let j = 0; j < gemTypesArr.length; j++) {
+            const currCount = countsArr[index];
+            const gemID = `${gemsRarityArr[i].id}_${gemTypesArr[j].id}`;
+
+            GemsPseudoDB[gemID][0] = currCount;
+
+            const meltVal = GemsPseudoDB[gemID][1];
+            totalDust += currCount * meltVal;
+
+            index++;
+        }
+    }
+
+    return totalDust;
 }
 
+function calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr){
+    let totalDust = calculateTotalDust(gemsRarityArr, gemTypesArr, countsArr)
+    return shinyDustToCash(totalDust, "BG_EU");
 
-// function shinyDustToCashV2(dustUnitsArgs = {}, country = "BG_EU") {
-//     if (!checkValidCountryCode(country)) return 0;
+}
 
-//     let totalDust = 0;
+// function calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr, country=countryPrices["BG_EU"]) {
+//     let totalPrice = 0;
+//     let index = 0;
 
-//     for (let unit in dustUnitsArgs) {
-//         const count = dustUnitsArgs[unit];
-//         const unitData = shinyDustUnits[unit];
+//     for (let i = 0; i < gemsRarityArr.length; i++) {
+//         for (let j = 0; j < gemTypesArr.length; j++) {
+//             const currCount = countsArr[index];
 
-//         if (!unitData) continue;
+//             const priceVal = GemsPseudoDB[gemID][2]; // assuming index 2 is price
+//             totalPrice += currCount * priceVal;
 
-//         const costPerUnit = unitData[1];
-//         totalDust += count * costPerUnit;
+//             index++;
+//         }
 //     }
-    
-//     console.log(totalDust);
 
-//     const midDustPackSize = 105000;
-//     const midDustPackPrice = countryPrices[country]["midDustPack"];
-//     const dustRatio = totalDust / midDustPackSize;
-
-//     const totalPrice = dustRatio * midDustPackPrice;
-//     return totalPrice.toFixed(2);
+//     return totalPrice;
 // }
