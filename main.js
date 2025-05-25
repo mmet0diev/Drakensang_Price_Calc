@@ -26,14 +26,15 @@ window.displayTotalShinyDust = function(){
 
 window.displayTotalAccPrice = function () {
     const premDays = document.getElementById("prem_days_input").value || 0;
-    const shinyDust = document.getElementById("shinydust_input").value || 0;
+    // const shinyDust = document.getElementById("shinydust_input").value || 0;
     const anders = document.getElementById("andermants_input").value || 0;
-
+    
+    const shinyDustPrice = getDustAndDustInCash()[1];
     const premDaysPrice = premDaysToCash(premDays) || 0;
-    const shinyDustPrice = shinyDustToCash(shinyDust) || 0;
+    // const shinyDustPrice = shinyDustToCash(shinyDust) || 0;
     const andersPrice = andersToCash(anders) || 0;
 
-    const total = TotalPriceSum([premDaysPrice, shinyDustPrice, andersPrice, getDustAndDustInCash()[1]]);
+    const total = TotalPriceSum([premDaysPrice, shinyDustPrice, andersPrice]);
     document.getElementById("totalAccPrice").textContent = `Total account price = ${total.toFixed(2)} €`;
 }
 
