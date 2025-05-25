@@ -1,5 +1,5 @@
 import { countryPrices } from "./CountryPrices.js";
-import { GemsPseudoDB } from "./ShinyDustObjects.js";
+import { GemsPseudoDB } from "./ObjectsPseudoDB.js";
 export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCash, TotalPriceSum, calculateTotalDust, calculateTotalPrice};
 
 function checkValidCountryCode(country) {

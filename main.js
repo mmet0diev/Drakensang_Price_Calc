@@ -1,5 +1,5 @@
 import { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPriceSum, calculateTotalDust, calculateTotalPrice } from "./functions.js"
-import { GemsPseudoDB } from "./ShinyDustObjects.js";
+import { GemsPseudoDB } from "./ObjectsPseudoDB.js";
 
 window.displayPremDaysInCash = function () {
     const enteredPremDays = document.getElementById("prem_days_input").value;
