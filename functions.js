@@ -80,7 +80,7 @@ function calculateTotalDust(gemsRarityArr, gemTypesArr, countsArr) {
 
 function calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr){
     let totalDust = calculateTotalDust(gemsRarityArr, gemTypesArr, countsArr)
-    return shinyDustToCash(totalDust, "BG_EU");
+    return Number(shinyDustToCash(totalDust, "BG_EU"));
 
 }
 

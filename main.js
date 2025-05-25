@@ -20,6 +20,10 @@ window.displayAndermantsInCash = function () {
     andermantsField.textContent = `Total Andermants in current currency: ${andersToCash(enteredAnders)} €`;
 }
 
+window.displayTotalShinyDust = function(){
+    document.getElementById('total_dust').textContent = `Total Shiny Dust: ${getDustAndDustInCash()[0]}`
+}
+
 window.displayTotalAccPrice = function () {
     const premDays = document.getElementById("prem_days_input").value || 0;
     const shinyDust = document.getElementById("shinydust_input").value || 0;
@@ -29,12 +33,12 @@ window.displayTotalAccPrice = function () {
     const shinyDustPrice = shinyDustToCash(shinyDust) || 0;
     const andersPrice = andersToCash(anders) || 0;
 
-    const total = TotalPriceSum([premDaysPrice, shinyDustPrice, andersPrice]);
+    const total = TotalPriceSum([premDaysPrice, shinyDustPrice, andersPrice, getDustAndDustInCash()[1]]);
     document.getElementById("totalAccPrice").textContent = `Total account price = ${total.toFixed(2)} €`;
 }
 
 
-window.displayCashAndDustRes = function () {
+window.getDustAndDustInCash = function () {
     const table = document.getElementById("myTable");
 
     const gemRarityRowsList = table.querySelectorAll("tr");
@@ -56,8 +60,8 @@ window.displayCashAndDustRes = function () {
 
     const totalDust = calculateTotalDust(gemsRarityArr, gemTypesArr, countsArr);
     const dustInCashTotal = calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr);
-
-    document.getElementById("total_dust").innerHTML = `Total dust calculated: ${totalDust}`;
-    document.getElementById("total_cash").innerHTML = `Total dust in cash: ${dustInCashTotal}€`
+    
+    return [totalDust, dustInCashTotal];
+    // document.getElementById("total_dust").innerHTML = `Total dust calculated: ${totalDust}`;
+    // document.getElementById("total_cash").innerHTML = `Total dust in cash: ${dustInCashTotal}€`
 };
-
