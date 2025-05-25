@@ -37,12 +37,16 @@ body {
     text-shadow: 0.1rem -0.1rem darkblue;
 }
 
-.p2{
+.p2 {
     font-size: 1.05rem;
-    font-family:monospace;
+    font-family: monospace;
     color: lightcoral;
-    /* font-weight: bold; */
     text-shadow: 0.1rem -0.1rem darkblue;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 100%; /* optional, if layout needs consistent width */
 }
 
 .main_page_title{
@@ -56,12 +60,6 @@ button {
     width: 8%;
     height: 2rem;
 }
-
-/* .totalPriceSection{
-    /* align-items: center;
-    padding-left: 30%;
-    padding-right: -70%;
-} */
 
 .TestGemsSection{
     display: flex;
@@ -96,4 +94,20 @@ th, td{
 
 #gemscell{
     border: 1px solid black;
+}
+
+.section1{
+    display: flex;
+    padding-right: 0.5rem;
+}
+
+.section1 button{
+    width: 5rem;
+}
+
+.section1 div{
+    padding-right: 3rem;
+    text-align: center;
+    border: 0.1rem solid indigo;
+    padding-right: 2rem;
 }
