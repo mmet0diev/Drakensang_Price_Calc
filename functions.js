@@ -7,6 +7,7 @@ function checkValidCountryCode(country) {
     return countryCodes.includes(country)
 }
 
+// Get prem days in cash
 function premDaysToCash(days = 0, country = "BG_EU") {
     let prem_month_price;
     if (checkValidCountryCode(country)) {
