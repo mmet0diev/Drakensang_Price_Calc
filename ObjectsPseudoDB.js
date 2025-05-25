@@ -222,7 +222,13 @@ export const GemsPseudoDB = {
   "exquisite-imperial_rhodolite": [0, 14000]
 };
 
-
+export const JewelsPseudoDB = {
+  "norm_jewel": [0, 1500],
+  "green_jewel": [0, 4125],
+  "blue_jewel": [0, 8250],
+  "pink_jewel": [0, 13875],
+  "leg_jewel": [0, 21000]
+}
 
 // export const GemsPseudoDB = {
 

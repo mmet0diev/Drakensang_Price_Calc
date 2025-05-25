@@ -22,6 +22,7 @@ window.displayAndermantsInCash = function () {
 
 window.displayTotalShinyDust = function(){
     document.getElementById('total_dust').textContent = `Total Shiny Dust: ${getDustAndDustInCash()[0]}`
+    document.getElementById('dustincash').textContent = `Shiny Dust in cash ${getDustAndDustInCash()[1]} €`
 }
 
 window.displayTotalAccPrice = function () {

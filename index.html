@@ -27,12 +27,17 @@
                 <button id="calcpremdaysbtn" onclick="displayPremDaysInCash()">Calculate</button>
             </div>
             <div>
+                <p class="p2" id="total_dust">Total dust calculated: </p>
+                <p class="p2" id="dustincash">Total dust in cash: </p>
+                <button onclick="displayTotalShinyDust()">Calculate</button>
+            </div>
+            <div>
                 <p class="p2" id="andermantsInCashID">Total andermants in current currency: </p>
                 <input id="andermants_input">
                 <button id="calcandersbtn" onclick="displayAndermantsInCash()">Calculate</button>
             </div>
         </div>
-
+        <div>
             <table class="myTable" id="myTable">
                 <caption><strong>Gems Counts Table</strong></caption>
                 <thead>
@@ -345,11 +350,7 @@
                 </tbody>
             </table>
         </div>
-        <div>
-            <p class="p2" id="total_dust">Total dust calculated: </p>
-            <!-- <p class="p2" id="total_cash">Total dust in cash: </p> -->
-            <button onclick="displayTotalShinyDust()">Calculate</button>
-        </div>
+
 
         <div class="totalPriceSection">
             <p class="p1" id="totalAccPrice">Total account price = </p>
