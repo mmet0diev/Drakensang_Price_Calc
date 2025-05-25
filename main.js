@@ -7,11 +7,11 @@ window.displayPremDaysInCash = function () {
     premDaysField.textContent = `Prem days in current currency: ${premDaysToCash(enteredPremDays)} €`;
 }
 
-window.displayShinydustInCash = function () {
-    const enteredDust = document.getElementById("shinydust_input").value;
-    const shinydustField = document.getElementById("shinydustInCashID");
-    shinydustField.textContent = `Total Shiny Dust in current currency: ${shinyDustToCash(enteredDust)} €`;
-}
+// window.displayShinydustInCash = function () {
+//     const enteredDust = document.getElementById("shinydust_input").value;
+//     const shinydustField = document.getElementById("shinydustInCashID");
+//     shinydustField.textContent = `Total Shiny Dust in current currency: ${shinyDustToCash(enteredDust)} €`;
+// }
 
 
 window.displayAndermantsInCash = function () {
