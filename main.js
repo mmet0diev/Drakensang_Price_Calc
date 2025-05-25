@@ -1,5 +1,5 @@
-import { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPriceSum, calculateTotalDust, calculateTotalPrice } from "./functions.js"
-import { GemsPseudoDB } from "./ObjectsPseudoDB.js";
+import { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPriceSum, calculateTotalGemsDust, calculateTotalPrice } from "./functions.js"
+import { GemsPseudoDB, JewelsPseudoDB } from "./ObjectsPseudoDB.js";
 
 window.displayPremDaysInCash = function () {
     const enteredPremDays = document.getElementById("prem_days_input").value;
@@ -41,7 +41,7 @@ window.displayTotalAccPrice = function () {
 
 
 window.getDustAndDustInCash = function () {
-    const table = document.getElementById("myTable");
+    const table = document.getElementById("GemsTable");
 
     const gemRarityRowsList = table.querySelectorAll("tr");
     const gemTypeHeaders = table.querySelectorAll(".GemTypes th");
@@ -60,10 +60,16 @@ window.getDustAndDustInCash = function () {
         });
     });
 
-    const totalDust = calculateTotalDust(gemsRarityArr, gemTypesArr, countsArr);
+    const totalDust = calculateTotalGemsDust(gemsRarityArr, gemTypesArr, countsArr);
     const dustInCashTotal = calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr);
     
     return [totalDust, dustInCashTotal];
     // document.getElementById("total_dust").innerHTML = `Total dust calculated: ${totalDust}`;
     // document.getElementById("total_cash").innerHTML = `Total dust in cash: ${dustInCashTotal}€`
 };
+
+window.displayJewelsDust = function(){
+    const table = document.getElementById("JewelsTable");
+
+    const jewelsRarityList = table.querySelectorAll("tr td");
+}

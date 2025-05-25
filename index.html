@@ -38,8 +38,8 @@
             </div>
         </div>
         <div>
-            <table class="myTable" id="myTable">
-                <caption><strong>Gems Counts Table</strong></caption>
+            <table class="GemsTable" id="GemsTable">
+                <caption><strong>Gems Table</strong></caption>
                 <thead>
                     <tr class="GemTypes">
                         <th id="gemscell"><strong>GEMS:</strong></th>
@@ -351,6 +351,26 @@
             </table>
         </div>
 
+        <div class="JewelsTable" id="JewelsTable">
+            <table>
+                <caption><strong>Jewels Table</strong></caption>
+                <tr>
+                    <th >Normal</th>
+                    <th >Green</th>
+                    <th >Blue</th>
+                    <th >Pink</th>
+                    <th >Legendary</th>
+                </tr>
+                <tr>
+                    <td id="norm_jewel"><input type="number"></td>
+                    <td id="green_jewel"><input type="number"></td>
+                    <td id="blue_jewel"><input type="number"></td>
+                    <td id="pink_jewel"><input type="number"></td>
+                    <td id="leg_jewel"><input type="number"></td>
+                </tr>
+            </table>
+            <button onclick="displayJewelsDust()">Calc</button>
+        </div>
 
         <div class="totalPriceSection">
             <p class="p1" id="totalAccPrice">Total account price = </p>

@@ -108,6 +108,10 @@ th, td{
 .section1 div{
     padding-right: 3rem;
     text-align: center;
-    border: 0.1rem solid indigo;
+    border: 0.1rem solid black;
     padding-right: 2rem;
+}
+
+.JewelsTable{
+    border: 0.1rem solid black;
 }
