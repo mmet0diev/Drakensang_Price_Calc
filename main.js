@@ -58,6 +58,6 @@ window.displayCashAndDustRes = function () {
     const dustInCashTotal = calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr);
 
     document.getElementById("total_dust").innerHTML = `Total dust calculated: ${totalDust}`;
-    document.getElementById("total_cash").innerHTML = `Total dust in cash: ${dustInCashTotal}`
+    document.getElementById("total_cash").innerHTML = `Total dust in cash: ${dustInCashTotal}€`
 };
 
