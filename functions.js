@@ -1,6 +1,8 @@
 import { countryPrices } from "./CountryPrices.js";
 import { GemsPseudoDB, JewelsPseudoDB } from "./ObjectsPseudoDB.js";
-export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCash, TotalPriceSum, calculateTotalGemsDust, calculateTotalPrice};
+export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCash, TotalPriceSum, calculateTotalGemsDust, calculateTotalPrice,
+    calculateTotalJewelsDust, calculateTotalJewelsPrice
+};
 
 function checkValidCountryCode(country) {
     const countryCodes = Object.keys(countryPrices)
@@ -85,13 +87,36 @@ function calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr){
 
 }
 
-function calcTotalJewDust(jewsArr){
-    let res = 0;
+function calculateTotalJewelsDust() {
+    const table = document.getElementById("JewelsTable");
+    if (!table) return 0;
 
-    jewsArr.array.forEach(element => {
-        JewelsPseudoDB[element][0]
+    const jewelInputs = table.querySelectorAll("input[type='number']");
+    let totalDust = 0;
+
+    jewelInputs.forEach(input => {
+        const td = input.closest("td");
+        const id = td?.id;
+        const count = parseInt(input.value) || 0;
+
+        if (JewelsPseudoDB[id]) {
+            JewelsPseudoDB[id][0] = count;
+            totalDust += count * JewelsPseudoDB[id][1];
+        }
     });
+
+    return totalDust;
 }
+
+function calculateTotalJewelsPrice(country = "BG_EU") {
+    const dust = calculateTotalJewelsDust();
+    return Number(shinyDustToCash(dust, country));
+}
+
+// function calcTotalJewsPrice(){
+//     let res = 0;
+
+// }
 
 // function calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr, country=countryPrices["BG_EU"]) {
 //     let totalPrice = 0;
