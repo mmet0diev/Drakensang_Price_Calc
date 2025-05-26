@@ -1,5 +1,5 @@
 import { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPriceSum,
-     calculateTotalGemsDust, calculateTotalPrice, calculateTotalJewelsDust, calculateTotalJewelsPrice
+     calculateTotalGemsDust, calculateTotalGemsPrice, calculateTotalJewelsDust, calculateTotalJewelsPrice
     } from "./functions.js"
 import { GemsPseudoDB, JewelsPseudoDB } from "./ObjectsPseudoDB.js";
 
@@ -32,7 +32,7 @@ window.displayTotalAccPrice = function () {
     // const shinyDust = document.getElementById("shinydust_input").value || 0;
     const anders = document.getElementById("andermants_input").value || 0;
     
-    const shinyDustPrice = getDustAndDustInCash()[1];
+    const shinyDustPrice = getDustAndDustInCash()[1] + calculateTotalJewelsPrice();
     const premDaysPrice = premDaysToCash(premDays) || 0;
     // const shinyDustPrice = shinyDustToCash(shinyDust) || 0;
     const andersPrice = andersToCash(anders) || 0;
@@ -63,7 +63,7 @@ window.getDustAndDustInCash = function () {
     });
 
     const totalDust = calculateTotalGemsDust(gemsRarityArr, gemTypesArr, countsArr);
-    const dustInCashTotal = calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr);
+    const dustInCashTotal = calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr);
     
     return [totalDust, dustInCashTotal];
     // document.getElementById("total_dust").innerHTML = `Total dust calculated: ${totalDust}`;

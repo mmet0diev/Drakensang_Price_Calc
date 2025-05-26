@@ -1,6 +1,6 @@
 import { countryPrices } from "./CountryPrices.js";
 import { GemsPseudoDB, JewelsPseudoDB } from "./ObjectsPseudoDB.js";
-export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCash, TotalPriceSum, calculateTotalGemsDust, calculateTotalPrice,
+export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCash, TotalPriceSum, calculateTotalGemsDust, calculateTotalGemsPrice,
     calculateTotalJewelsDust, calculateTotalJewelsPrice
 };
 
@@ -81,7 +81,7 @@ function calculateTotalGemsDust(gemsRarityArr, gemTypesArr, countsArr) {
     return totalDust;
 }
 
-function calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr){
+function calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr){
     let totalDust = calculateTotalGemsDust(gemsRarityArr, gemTypesArr, countsArr)
     return Number(shinyDustToCash(totalDust, "BG_EU"));
 
@@ -118,7 +118,7 @@ function calculateTotalJewelsPrice(country = "BG_EU") {
 
 // }
 
-// function calculateTotalPrice(gemsRarityArr, gemTypesArr, countsArr, country=countryPrices["BG_EU"]) {
+// function calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr, country=countryPrices["BG_EU"]) {
 //     let totalPrice = 0;
 //     let index = 0;
 
