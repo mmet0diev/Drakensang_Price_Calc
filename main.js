@@ -82,25 +82,6 @@ window.getDustAndDustInCash = function () {
     // document.getElementById("total_cash").innerHTML = `Total dust in cash: ${dustInCashTotal}€`
 };
 
-// window.displayJewelsDust = function(){
-//     let res = 0;
-//     const table = document.getElementById("JewelsTable");
-
-//     const jewelsRarityList = table.querySelectorAll("tr td");
-
-//     jewelsRarityList.forEach(td => {
-//         const input = td.querySelector("input");
-//         let currId = td.id;
-//         let inptval = input.value
-
-//         // Update JewelsPseudoDB count value (e.g. array[0]) to entered input value
-//         JewelsPseudoDB[currId][0] = inptval;
-//         res+=JewelsPseudoDB[currId][0]*JewelsPseudoDB[currId][1]
-//     })
-//     // console.log(res)
-//     document.getElementById("totalJewsDust").innerHTML = `Total Jewels Dust = ${res}`
-// }
-
 window.displayJewelsDust = function () {
     const dust = calculateTotalJewelsDust();
     const price = calculateTotalJewelsPrice();
