@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DSO Calculator</title>
     <link rel="stylesheet" href="style.css">
     <!-- <script type="module" src="testing.js"></script> -->
     <script type="module" src="main.js"></script>
@@ -22,15 +22,26 @@
     <div class="Calculator_section">
         <div class="section1">
             <div>
-                <p class="p2" id="premDaysInCashID">Prem days in current currency: </p>
+                <p class="p2" id="premDaysInCashID">Prem days in cash: </p>
                 <input id="prem_days_input">
                 <button id="calcpremdaysbtn" onclick="displayPremDaysInCash()">Calculate</button>
             </div>
-
             <div>
-                <p class="p2" id="andermantsInCashID">Total andermants in current currency: </p>
+                <p class="p2" id="andermantsInCashID">Total andermants in cash: </p>
                 <input id="andermants_input">
                 <button id="calcandersbtn" onclick="displayAndermantsInCash()">Calculate</button>
+            </div>
+            <div>
+                <p class="p2" id="drakenInCash">Total drakens in cash: </p>
+                <p class="p2" id="drakeninanders">Total drakens in andermants: </p>
+                <input id="drakens_input">
+                <button id="drakensbtn" onclick="displayDrakensInCash()">Calculate</button>
+            </div>
+            <div>
+                <p class="p2" id="ipsInCash">Total IPs in cash: </p>
+                <p class="p2" id="ipsinanders">Total IPs in andermants: </p>
+                <input id="ips_input">
+                <button id="ipsbtn" onclick="displayIPsToCash()">Calculate</button>
             </div>
         </div>
         <div class="responsive_table">

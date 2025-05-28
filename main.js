@@ -1,25 +1,32 @@
 import { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPriceSum,
-     calculateTotalGemsDust, calculateTotalGemsPrice, calculateTotalJewelsDust, calculateTotalJewelsPrice
+     calculateTotalGemsDust, calculateTotalGemsPrice, calculateTotalJewelsDust, calculateTotalJewelsPrice, convertDrakenToCash, convertIPsToCash, getDrakensInAnders, getIPsInAnders
     } from "./functions.js"
 // import { GemsPseudoDB, JewelsPseudoDB } from "./ObjectsPseudoDB.js";
 
 window.displayPremDaysInCash = function () {
     const enteredPremDays = document.getElementById("prem_days_input").value;
     const premDaysField = document.getElementById("premDaysInCashID");
-    premDaysField.textContent = `Prem days in current currency: ${premDaysToCash(enteredPremDays)} €`;
+    premDaysField.textContent = `Prem days in cash: ${premDaysToCash(enteredPremDays)} €`;
 }
-
-// window.displayShinydustInCash = function () {
-//     const enteredDust = document.getElementById("shinydust_input").value;
-//     const shinydustField = document.getElementById("shinydustInCashID");
-//     shinydustField.textContent = `Total Shiny Dust in current currency: ${shinyDustToCash(enteredDust)} €`;
-// }
-
 
 window.displayAndermantsInCash = function () {
     const enteredAnders = document.getElementById("andermants_input").value;
     const andermantsField = document.getElementById("andermantsInCashID");
-    andermantsField.textContent = `Total Andermants in current currency: ${andersToCash(enteredAnders)} €`;
+    andermantsField.textContent = `Total Andermants in cash: ${andersToCash(enteredAnders)} €`;
+}
+
+window.displayDrakensInCash = function () {
+    const enteredDrakens = document.getElementById("drakens_input").value;
+    const drakensField = document.getElementById("drakenInCash");
+    document.getElementById("drakeninanders").textContent = `Total drakens in andermants: ${getDrakensInAnders(enteredDrakens, 8)}`;
+    drakensField.textContent = `Total drakens in cash: ${convertDrakenToCash(enteredDrakens, 8)} €`;
+}
+
+window.displayIPsToCash = function () {
+    const ipsEntered = document.getElementById("ips_input").value;
+    const ipsField = document.getElementById("ipsInCash");
+    document.getElementById("ipsinanders").textContent = `Total IPs in andermants: ${getIPsInAnders(ipsEntered)}`;
+    ipsField.textContent = `Total IPs in cash: ${convertIPsToCash(ipsEntered)} €`;
 }
 
 window.displayTotalGemsShinyDust = function(){
@@ -93,6 +100,5 @@ window.displayJewelsDust = function () {
     const dust = calculateTotalJewelsDust();
     const price = calculateTotalJewelsPrice();
 
-    document.getElementById("totalJewsDust").textContent =
-        `Total Jewels Dust = ${dust} (≈ ${price.toFixed(2)} €)`;
+    document.getElementById("totalJewsDust").textContent = `Total Jewels Dust = ${dust} (≈ ${price.toFixed(2)} €)`;
 };

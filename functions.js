@@ -1,7 +1,7 @@
 import { countryPrices } from "./CountryPrices.js";
 import { GemsPseudoDB, JewelsPseudoDB } from "./ObjectsPseudoDB.js";
 export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCash, TotalPriceSum, calculateTotalGemsDust, calculateTotalGemsPrice,
-    calculateTotalJewelsDust, calculateTotalJewelsPrice
+    calculateTotalJewelsDust, calculateTotalJewelsPrice, convertDrakenToCash, convertIPsToCash, getDrakensInAnders, getIPsInAnders
 };
 
 function checkValidCountryCode(country) {
@@ -113,18 +113,26 @@ function calculateTotalJewelsPrice(country = "BG_EU") {
     return Number(shinyDustToCash(dust, country));
 }
 
+function getDrakensInAnders(drakens, drakenAnderRatio=8){
+    return drakens * drakenAnderRatio;
+}
+
 // Function to convert draken to cash (there is no ingame price for draken in cash, so we will convert the draken to ander and then the ander to cash)
 function convertDrakenToCash(drakens, drakenAnderRatio=8, country="BG_EU"){
     // 1000 draken = 8000 anders so 1 draken = 8 anders
     let drakenInAnders = drakens*drakenAnderRatio;
-    return andersToCash(drakenInAnders, country)
+    return andersToCash(drakenInAnders, country);
+}
+
+function getIPsInAnders(ips, ipAnderRatio=80){
+    return ips*ipAnderRatio;
 }
 
 // There is no ingame package/cash price for IPs so we will convert the average IP cost in ander to cash
 function convertIPsToCash(ips, ipAnderRatio=80, country="BG_EU"){
     // 10 ips = 800 anders so 1 ip = 80 anders.
     let ipsToAnders = ips*ipAnderRatio;
-    return andersToCash(ipsToAnders, country)
+    return andersToCash(ipsToAnders, country);
 }
 
 // function calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr, country=countryPrices["BG_EU"]) {
