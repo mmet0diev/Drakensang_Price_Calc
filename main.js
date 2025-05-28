@@ -1,7 +1,7 @@
 import { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPriceSum,
      calculateTotalGemsDust, calculateTotalGemsPrice, calculateTotalJewelsDust, calculateTotalJewelsPrice
     } from "./functions.js"
-import { GemsPseudoDB, JewelsPseudoDB } from "./ObjectsPseudoDB.js";
+// import { GemsPseudoDB, JewelsPseudoDB } from "./ObjectsPseudoDB.js";
 
 window.displayPremDaysInCash = function () {
     const enteredPremDays = document.getElementById("prem_days_input").value;
@@ -22,9 +22,9 @@ window.displayAndermantsInCash = function () {
     andermantsField.textContent = `Total Andermants in current currency: ${andersToCash(enteredAnders)} €`;
 }
 
-window.displayTotalShinyDust = function(){
-    document.getElementById('total_dust').textContent = `Total Shiny Dust: ${getDustAndDustInCash()[0]}`
-    document.getElementById('dustincash').textContent = `Shiny Dust in cash ${getDustAndDustInCash()[1]} €`
+window.displayTotalGemsShinyDust = function(){
+    document.getElementById('total_dust').textContent = `Total Gems Shiny Dust: ${getDustAndDustInCash()[0]}`
+    document.getElementById('dustincash').textContent = `Total Gems Shiny Dust in cash ${getDustAndDustInCash()[1]} €`
 }
 
 window.displayTotalAccPrice = function () {
@@ -32,8 +32,8 @@ window.displayTotalAccPrice = function () {
     // const shinyDust = document.getElementById("shinydust_input").value || 0;
     const anders = document.getElementById("andermants_input").value || 0;
     
-    const shinyDustPrice = getDustAndDustInCash()[1] + calculateTotalJewelsPrice();
     const premDaysPrice = premDaysToCash(premDays) || 0;
+    const shinyDustPrice = getDustAndDustInCash()[1] + calculateTotalJewelsPrice();
     // const shinyDustPrice = shinyDustToCash(shinyDust) || 0;
     const andersPrice = andersToCash(anders) || 0;
 

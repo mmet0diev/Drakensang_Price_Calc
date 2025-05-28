@@ -100,7 +100,7 @@ table {
 }
 
 table th, table td {
-    padding: 0.7rem;
+    padding: 0.5rem;
     border-bottom: 1px solid #ddd;
     text-align: center;
 }
@@ -120,7 +120,7 @@ table tr:hover {
 }
 
 input{
-    max-width: 5.5rem;
+    max-width: 4rem;
     max-height: 50%;
 }
 
@@ -197,10 +197,27 @@ th, td{
 }
 
 
+.GemsShinyDustCalcSection{
+    padding: 1rem;
+    border-radius: 0.8rem;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    text-align: left; /* centers text within each div */
+    flex: 0 1 auto; /* prevents divs from stretching too much */
+    border: 1px solid black;
+}
 
+.responsive_table{
+    width: 100%;
+    overflow-x: auto;
+    /* Optional: add smooth scrolling on mobile */
+    -webkit-overflow-scrolling: touch;
+}
 
-
-
+.GemsTable {
+    min-width: 800px; /* or whatever minimum width is necessary for your columns */
+    width: max-content; /* lets the table take as much width as needed, inside the scrollable div */
+}
 
 @media (max-width: 768px) {
     .section1 {
