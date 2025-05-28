@@ -6,7 +6,8 @@ export const countryPrices = {
     "midDustPack": 7.59,
     "bigDustPack": 37.99,
     "averageAndermant": Math.ceil(28742.85714285714),
-    "averageAnderCost": Math.ceil(20.86714285714286)
+    "averageAnderCost": Math.ceil(20.86714285714286),
+    // "drakenCostInAverageAnders" : 8000 / Math.ceil(28742.85714285714) * Math.ceil(20.86714285714286)
   },
   // "UK_GBP": {
   //   "prem_per_month": ("BG_EU".prem_per_month * rate).toFixed(2),

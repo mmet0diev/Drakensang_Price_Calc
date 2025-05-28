@@ -113,10 +113,9 @@ function calculateTotalJewelsPrice(country = "BG_EU") {
     return Number(shinyDustToCash(dust, country));
 }
 
-// function calcTotalJewsPrice(){
-//     let res = 0;
-
-// }
+function convertDrakenToCash(drakens, country="BG_EU"){
+    return (drakens / countryPrices[country]["averageAndermant"]) * countryPrices[country]["averageAnderCost"];
+}
 
 // function calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr, country=countryPrices["BG_EU"]) {
 //     let totalPrice = 0;
