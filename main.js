@@ -35,16 +35,21 @@ window.displayTotalGemsShinyDust = function(){
 }
 
 window.displayTotalAccPrice = function () {
+    // All input values
     const premDays = document.getElementById("prem_days_input").value || 0;
     // const shinyDust = document.getElementById("shinydust_input").value || 0;
     const anders = document.getElementById("andermants_input").value || 0;
+    const drakens = document.getElementById("drakens_input").value;
+    const ips = document.getElementById("ips_input").value;
     
     const premDaysPrice = premDaysToCash(premDays) || 0;
     const shinyDustPrice = getDustAndDustInCash()[1] + calculateTotalJewelsPrice();
     // const shinyDustPrice = shinyDustToCash(shinyDust) || 0;
     const andersPrice = andersToCash(anders) || 0;
+    const drakenPrice = convertDrakenToCash(drakens) || 0;
+    const ipsPrice = convertIPsToCash(ips) || 0;
 
-    const total = TotalPriceSum([premDaysPrice, shinyDustPrice, andersPrice]);
+    const total = TotalPriceSum([premDaysPrice, shinyDustPrice, andersPrice, drakenPrice, ipsPrice]);
     document.getElementById("totalAccPrice").textContent = `Total account price = ${total.toFixed(2)} €`;
 }
 
