@@ -7,6 +7,7 @@ body {
     line-height: 1.5;
 }
 
+
 #CalcTitle {
     display: inline-block; /* required for transform animation */
     padding: 0.5rem 1rem;
@@ -217,7 +218,27 @@ th, td{
 .GemsTable {
     min-width: 800px; /* or whatever minimum width is necessary for your columns */
     width: max-content; /* lets the table take as much width as needed, inside the scrollable div */
+    /* border: 1px solid black; */
 }
+
+.table-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
     .section1 {
