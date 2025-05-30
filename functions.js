@@ -1,7 +1,8 @@
 import { countryPrices } from "./CountryPrices.js";
 import { GemsPseudoDB, JewelsPseudoDB } from "./ObjectsPseudoDB.js";
 export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCash, TotalPriceSum, calculateTotalGemsDust, calculateTotalGemsPrice,
-    calculateTotalJewelsDust, calculateTotalJewelsPrice, convertDrakenToCash, convertIPsToCash, getDrakensInAnders, getIPsInAnders
+    calculateTotalJewelsDust, calculateTotalJewelsPrice, convertDrakenToCash, convertIPsToCash, getDrakensInAnders, getIPsInAnders, 
+    deluxeDaysToCash
 };
 
 function checkValidCountryCode(country) {
@@ -13,7 +14,23 @@ function checkValidCountryCode(country) {
 function premDaysToCash(days = 0, country = "BG_EU") {
     let prem_month_price;
     if (checkValidCountryCode(country)) {
-        prem_month_price = countryPrices[country].prem_per_month;
+        prem_month_price = countryPrices[country]["prem_per_month"];
+    } else {
+        prem_month_price = undefined;
+    }
+
+    const period = 30;
+
+    let costPerDay = prem_month_price / period;
+    let res = parseFloat((days * costPerDay).toFixed(2));
+    return res;
+}
+
+// Get prem days in cash
+function deluxeDaysToCash(days = 0, country = "BG_EU") {
+    let prem_month_price;
+    if (checkValidCountryCode(country)) {
+        prem_month_price = countryPrices[country]["deluxe_per_month"];
     } else {
         prem_month_price = undefined;
     }
