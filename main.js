@@ -2,7 +2,6 @@ import { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPri
      calculateTotalGemsDust, calculateTotalGemsPrice, calculateTotalJewelsDust, calculateTotalJewelsPrice, convertDrakenToCash, 
      convertIPsToCash, getDrakensInAnders, getIPsInAnders, deluxeDaysToCash
     } from "./functions.js"
-// import { GemsPseudoDB, JewelsPseudoDB } from "./ObjectsPseudoDB.js";
 
 window.displayPremDaysInCash = function () {
     const enteredPremDays = document.getElementById("prem_days_input").value;
