@@ -9,7 +9,7 @@ export const countryPrices = {
     "averageAnderCost": Math.ceil(20.86714285714286),
     // "drakenCostInAverageAnders" : 8000 / Math.ceil(28742.85714285714) * Math.ceil(20.86714285714286)
   },
-  "TR_EU": {
+  "TL_EU": {
     "prem_per_month": 4.50,
     "deluxe_per_month": 10.12,
     "midDustPack": 4.50,

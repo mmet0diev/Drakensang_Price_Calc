@@ -11,7 +11,7 @@ function checkValidCountryCode(country) {
 }
 
 // Get prem days in cash
-function premDaysToCash(days = 0, country = "BG_EU") {
+function premDaysToCash(days = 0, country = "TL_EU") {
     let prem_month_price;
     if (checkValidCountryCode(country)) {
         prem_month_price = countryPrices[country]["prem_per_month"];
@@ -27,7 +27,7 @@ function premDaysToCash(days = 0, country = "BG_EU") {
 }
 
 // Get prem days in cash
-function deluxeDaysToCash(days = 0, country = "BG_EU") {
+function deluxeDaysToCash(days = 0, country = "TL_EU") {
     let prem_month_price;
     if (checkValidCountryCode(country)) {
         prem_month_price = countryPrices[country]["deluxe_per_month"];
@@ -46,7 +46,7 @@ function deluxeDaysToCash(days = 0, country = "BG_EU") {
 The averageAnders is the sum of the anders of all 7 options to purchase andermants in the DSO shop divided by 7.
 The averageAnderCost is the average (in money) of all 7 purchase options in the DSO shop divided by 7.
 */
-function andersToCash(anders = 0, country = "BG_EU") {
+function andersToCash(anders = 0, country = "TL_EU") {
     if (!checkValidCountryCode(country)) return "0.00";
 
     // const { averageAndermant, averageAnderCost } = countryPrices[country];
@@ -58,7 +58,7 @@ function andersToCash(anders = 0, country = "BG_EU") {
     return res.toFixed(2);
 }
 
-function shinyDustToCash(totalDust = 0, country = "BG_EU"){
+function shinyDustToCash(totalDust = 0, country = "TL_EU"){
     if (!checkValidCountryCode(country)) return 0;
     let res = totalDust / 105000 * countryPrices[country]["midDustPack"];
     return res.toFixed(2);
@@ -100,7 +100,7 @@ function calculateTotalGemsDust(gemsRarityArr, gemTypesArr, countsArr) {
 
 function calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr){
     let totalDust = calculateTotalGemsDust(gemsRarityArr, gemTypesArr, countsArr)
-    return Number(shinyDustToCash(totalDust, "BG_EU"));
+    return Number(shinyDustToCash(totalDust, "TL_EU"));
 
 }
 
@@ -125,7 +125,7 @@ function calculateTotalJewelsDust() {
     return totalDust;
 }
 
-function calculateTotalJewelsPrice(country = "BG_EU") {
+function calculateTotalJewelsPrice(country = "TL_EU") {
     const dust = calculateTotalJewelsDust();
     return Number(shinyDustToCash(dust, country));
 }
@@ -135,7 +135,7 @@ function getDrakensInAnders(drakens, drakenAnderRatio=8){
 }
 
 // Function to convert draken to cash (there is no ingame price for draken in cash, so we will convert the draken to ander and then the ander to cash)
-function convertDrakenToCash(drakens, drakenAnderRatio=8, country="BG_EU"){
+function convertDrakenToCash(drakens, drakenAnderRatio=8, country="TL_EU"){
     // 1000 draken = 8000 anders so 1 draken = 8 anders
     let drakenInAnders = drakens*drakenAnderRatio;
     return andersToCash(drakenInAnders, country);
