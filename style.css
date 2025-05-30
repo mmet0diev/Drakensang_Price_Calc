@@ -208,19 +208,6 @@ th, td{
     border: 1px solid black;
 }
 
-.responsive_table{
-    width: 100%;
-    overflow-x: auto;
-    /* Optional: add smooth scrolling on mobile */
-    -webkit-overflow-scrolling: touch;
-}
-
-.GemsTable {
-    min-width: 800px; /* or whatever minimum width is necessary for your columns */
-    width: max-content; /* lets the table take as much width as needed, inside the scrollable div */
-    /* border: 1px solid black; */
-}
-
 .table-center {
     width: 100%;
     display: flex;
@@ -229,8 +216,21 @@ th, td{
     margin-bottom: 1.5rem;
 }
 
+.responsive_table {
+    /* Remove width: 100%! */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: block; /* Or inline-block, either is fine */
+    max-width: 100vw; /* So it never overflows the viewport horizontally */
+}
 
-
+.GemsTable {
+    min-width: 800px;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #333;
+}
 
 
 
