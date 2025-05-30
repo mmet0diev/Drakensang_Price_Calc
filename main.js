@@ -30,8 +30,8 @@ window.displayIPsToCash = function () {
 }
 
 window.displayTotalGemsShinyDust = function(){
-    document.getElementById('total_dust').textContent = `Total Gems Shiny Dust: ${getDustAndDustInCash()[0]}`
-    document.getElementById('dustincash').textContent = `Total Gems Shiny Dust in cash ${getDustAndDustInCash()[1]} €`
+    document.getElementById('total_dust').textContent = `Total gems shiny dust: ${getDustAndDustInCash()[0]}`
+    document.getElementById('dustincash').textContent = `Total gems shiny dust in cash ${getDustAndDustInCash()[1]} €`
 }
 
 window.displayTotalAccPrice = function () {
@@ -86,5 +86,5 @@ window.displayJewelsDust = function () {
     const dust = calculateTotalJewelsDust();
     const price = calculateTotalJewelsPrice();
 
-    document.getElementById("totalJewsDust").textContent = `Total Jewels Dust = ${dust} (≈ ${price.toFixed(2)} €)`;
+    document.getElementById("totalJewsDust").textContent = `Total jewels shiny dust = ${dust} (≈ ${price.toFixed(2)} €)`;
 };
