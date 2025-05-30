@@ -24,7 +24,7 @@ body {
     color: lightblue;
 }
 
-.navbar {
+/* .navbar {
     background-color: #3498db;
     color: #fff;
     padding: 0.5rem 1rem;
@@ -43,7 +43,7 @@ body {
 .navbar a:hover {
     color: #ecf0f1;
     transform: translateY(-2px);
-}
+} */
 
 .p1 {
     font-size: 1.4rem;
@@ -232,7 +232,26 @@ th, td{
     border: 1px solid #333;
 }
 
+.indevsection {
+    background-color: #fffbe6;        /* Soft yellow-ish for 'notice' */
+    color: #856404;                   /* Warm brown for readable text */
+    border: 1px solid #ffeeba;        /* Slight border, notice style */
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(255, 220, 70, 0.08); /* subtle yellow shadow */
+    margin: 1.2rem auto 1.5rem auto;  /* space below title, above content */
+    max-width: 1200px;                 /* keeps it narrow and centered */
+    padding: 0.5rem 2rem;
+    font-size: 1.08rem;
+    text-align: center;
+    font-family: inherit;
+    /* Optional subtle animation on load */
+    animation: fadein-indev 0.8s;
+}
 
+@keyframes fadein-indev {
+    from { opacity: 0; transform: translateY(-8px);}
+    to   { opacity: 1; transform: translateY(0);}
+}
 
 
 
