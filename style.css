@@ -57,14 +57,23 @@ body {
 }
 
 .main_page_title {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #2c3e50;
     color: #ecf0f1;
-    padding: 1rem;
+    padding: 2.5rem;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-width: 100%;
+}
+
+.ghost {
+    width: 40px;
+    height: 40px;
+    visibility: hidden; /* Takes up space but invisible */
 }
 
 button {
@@ -253,10 +262,81 @@ th, td{
     to   { opacity: 1; transform: translateY(0);}
 }
 
+.dropdown_menu {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    cursor: pointer;
+    outline: none;
+    /* Optional: to remove blue outline on click/focus, but keep accessibility if you want */
+    /* Add border-radius if you want round flags: border-radius: 50%; */
+    /* Add hover/active states if needed */
+}
 
+/* DROP DOWN MENU STYLING */
+.dropdown_menu {
+    position: relative;
+    display: inline-block;
+}
 
+.dropdown_button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
 
+.dropdown_button img {
+    width: 30px;
+    height: 22px;
+    object-fit: cover;
+}
 
+.dropdown_content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 0.3rem;
+    z-index: 10;
+    padding: 0.3rem 0;
+    /* Optional: animation */
+    transition: opacity 0.15s;
+}
+
+.dropdown_content button {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #34495e;
+}
+
+.dropdown_content button:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown_content img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Show dropdown on hover */
+.dropdown_menu:hover .dropdown_content,
+.dropdown_menu:focus-within .dropdown_content {
+    display: block;
+}
 
 
 @media (max-width: 768px) {
