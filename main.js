@@ -6,7 +6,7 @@ import { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPri
 window.displayPremDaysInCash = function () {
     const enteredPremDays = document.getElementById("prem_days_input").value;
     const premDaysField = document.getElementById("premDaysInCashID");
-    premDaysField.textContent = `Prem days in cash: ${premDaysToCash(enteredPremDays)} €`;
+    premDaysField.textContent = `Premium days in cash: ${premDaysToCash(enteredPremDays)} €`;
 }
 
 window.displayAndermantsInCash = function () {
