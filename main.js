@@ -109,6 +109,8 @@ window.displayTotalAccPrice = function () {
     document.getElementById("totalAccPrice").textContent = `Total account price = ${total.toFixed(2)} €`;
 }
 
+
+
 // const flagData = [
 //     { country: "BG_EU", img: "./0therMaterials/country flags/bg_flag.png", alt: "BG Flag" },
 //     { country: "TR_EU", img: "./0therMaterials/country flags/tr_flag.png", alt: "TR Flag" },
