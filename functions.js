@@ -98,9 +98,9 @@ function calculateTotalGemsDust(gemsRarityArr, gemTypesArr, countsArr) {
     return totalDust;
 }
 
-function calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr){
+function calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr, country="TR_EU"){
     let totalDust = calculateTotalGemsDust(gemsRarityArr, gemTypesArr, countsArr)
-    return Number(shinyDustToCash(totalDust, "TR_EU"));
+    return Number(shinyDustToCash(totalDust, country));
 
 }
 

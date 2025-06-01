@@ -63,7 +63,7 @@ window.getDustAndDustInCash = function () {
     });
 
     const totalDust = calculateTotalGemsDust(gemsRarityArr, gemTypesArr, countsArr);
-    const dustInCashTotal = calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr);
+    const dustInCashTotal = calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr, countryCode);
     
     return [totalDust, dustInCashTotal];
     // document.getElementById("total_dust").innerHTML = `Total dust calculated: ${totalDust}`;
