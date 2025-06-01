@@ -81,7 +81,7 @@ export function setEUCurrencyPricesBasedOnTL() {
 
 // Utility: Fetch TL → EUR rate
 // async function fetchTLtoEURRate() {
-//   const API_KEY = "7a7fc8f1054b2e523e5a03626e3160d6";
+//   const API_KEY = "your_api_key";
 //   const url = `https://api.exchangeratesapi.io/v1/latest?access_key=${API_KEY}&symbols=TRY`;
 //   const resp = await fetch(url);
 //   const data = await resp.json();
