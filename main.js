@@ -8,7 +8,7 @@ import { setEUCurrencyPricesBasedOnTL } from "./CountryPrices.js"
 let countryCode = "TR_EU";
 
 // Set initial country prices
-setEUCurrencyPricesBasedOnTL();
+// setEUCurrencyPricesBasedOnTL();
 
 window.displayPremDaysInCash = function () {
     const enteredPremDays = document.getElementById("prem_days_input").value;
@@ -109,34 +109,34 @@ window.displayTotalAccPrice = function () {
     document.getElementById("totalAccPrice").textContent = `Total account price = ${total.toFixed(2)} €`;
 }
 
-const flagData = [
-    { country: "BG_EU", img: "./0therMaterials/country flags/bg_flag.png", alt: "BG Flag" },
-    { country: "TR_EU", img: "./0therMaterials/country flags/tr_flag.png", alt: "TR Flag" },
-    // { country: "UK_GBP", img: "./0therMaterials/country flags/uk_flag.png", alt: "UK Flag" }
-];
+// const flagData = [
+//     { country: "BG_EU", img: "./0therMaterials/country flags/bg_flag.png", alt: "BG Flag" },
+//     { country: "TR_EU", img: "./0therMaterials/country flags/tr_flag.png", alt: "TR Flag" },
+//     // { country: "UK_GBP", img: "./0therMaterials/country flags/uk_flag.png", alt: "UK Flag" }
+// ];
 
-const dropdownMenu = document.getElementById("countryDropdown");
-const selectedBtn = document.getElementById("dropdownSelected");
-const optionsDiv = document.getElementById("dropdownOptions");
+// const dropdownMenu = document.getElementById("countryDropdown");
+// const selectedBtn = document.getElementById("dropdownSelected");
+// const optionsDiv = document.getElementById("dropdownOptions");
 
-optionsDiv.addEventListener("click", function (e) {
-    const btn = e.target.closest("button");
-    if (!btn) return;
-    const img = btn.querySelector("img");
-    if (!img) return;
-    const selectedCountry = img.dataset.country;
+// optionsDiv.addEventListener("click", function (e) {
+//     const btn = e.target.closest("button");
+//     if (!btn) return;
+//     const img = btn.querySelector("img");
+//     if (!img) return;
+//     const selectedCountry = img.dataset.country;
 
-    // Update the global countryCode!
-    countryCode = selectedCountry;
+//     // Update the global countryCode!
+//     countryCode = selectedCountry;
 
-    // Find new selected and update main button
-    const newFlag = flagData.find(key => key.country === selectedCountry);
+//     // Find new selected and update main button
+//     const newFlag = flagData.find(key => key.country === selectedCountry);
 
-    selectedBtn.innerHTML = `<img src="${newFlag.img}" alt="${newFlag.alt}" data-country="${newFlag.country}">`;
+//     selectedBtn.innerHTML = `<img src="${newFlag.img}" alt="${newFlag.alt}" data-country="${newFlag.country}">`;
 
-    // Build the new dropdown with remaining countries
-    let rest = flagData.filter(key => key.country !== selectedCountry);
-    optionsDiv.innerHTML = rest.map(key =>
-        `<button><img src="${key.img}" alt="${key.alt}" data-country="${key.country}"></button>`
-    ).join("");
-});
+//     // Build the new dropdown with remaining countries
+//     let rest = flagData.filter(key => key.country !== selectedCountry);
+//     optionsDiv.innerHTML = rest.map(key =>
+//         `<button><img src="${key.img}" alt="${key.alt}" data-country="${key.country}"></button>`
+//     ).join("");
+// });
