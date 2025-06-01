@@ -4,6 +4,7 @@ export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCash, TotalPri
     calculateTotalJewelsDust, calculateTotalJewelsPrice, convertDrakenToCash, convertIPsToCash, getDrakensInAnders, getIPsInAnders, 
     deluxeDaysToCash
 };
+import { setEUCurrencyPricesBasedOnTL } from "./CountryPrices.js"
 
 function checkValidCountryCode(country) {
     const countryCodes = Object.keys(countryPrices)
@@ -55,13 +56,13 @@ function andersToCash(anders = 0, country = "TR_EU") {
 
     const res = (anders / avrgAndersNum) * avrgAndersPrice;
 
-    return res.toFixed(2);
+    return Number(res.toFixed(2));
 }
 
 function shinyDustToCash(totalDust = 0, country = "TR_EU"){
     if (!checkValidCountryCode(country)) return 0;
     let res = totalDust / 105000 * countryPrices[country]["midDustPack"];
-    return res.toFixed(2);
+    return Number(res.toFixed(2));
 }
 
 function getIPsToAnders(ips){
@@ -142,7 +143,7 @@ function convertDrakenToCash(drakens, drakenAnderRatio=8, country="TR_EU"){
 }
 
 function getIPsInAnders(ips, ipAnderRatio=80){
-    return ips*ipAnderRatio;
+    return Number(ips*ipAnderRatio);
 }
 
 // There is no ingame package/cash price for IPs so we will convert the average IP cost in ander to cash

@@ -1,9 +1,14 @@
-import { premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPriceSum,
-     calculateTotalGemsDust, calculateTotalGemsPrice, calculateTotalJewelsDust, calculateTotalJewelsPrice, convertDrakenToCash, 
-     convertIPsToCash, getDrakensInAnders, getIPsInAnders, deluxeDaysToCash
-    } from "./functions.js"
+import {
+    premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPriceSum,
+    calculateTotalGemsDust, calculateTotalGemsPrice, calculateTotalJewelsDust, calculateTotalJewelsPrice, convertDrakenToCash,
+    convertIPsToCash, getDrakensInAnders, getIPsInAnders, deluxeDaysToCash
+} from "./functions.js"
+import { setEUCurrencyPricesBasedOnTL } from "./CountryPrices.js"
 
 let countryCode = "TR_EU";
+
+// Set initial country prices
+setEUCurrencyPricesBasedOnTL();
 
 window.displayPremDaysInCash = function () {
     const enteredPremDays = document.getElementById("prem_days_input").value;
@@ -37,7 +42,7 @@ window.displayIPsToCash = function () {
     ipsField.textContent = `Total IPs in cash: ${convertIPsToCash(ipsEntered, countryCode)} €`;
 }
 
-window.displayTotalGemsShinyDust = function(){
+window.displayTotalGemsShinyDust = function () {
     document.getElementById('total_dust').textContent = `Total gems shiny dust: ${getDustAndDustInCash()[0]}`
     document.getElementById('dustincash').textContent = `Total gems shiny dust in cash ${getDustAndDustInCash()[1]} €`
 }
@@ -64,7 +69,7 @@ window.getDustAndDustInCash = function () {
 
     const totalDust = calculateTotalGemsDust(gemsRarityArr, gemTypesArr, countsArr);
     const dustInCashTotal = calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr, countryCode);
-    
+
     return [totalDust, dustInCashTotal];
     // document.getElementById("total_dust").innerHTML = `Total dust calculated: ${totalDust}`;
     // document.getElementById("total_cash").innerHTML = `Total dust in cash: ${dustInCashTotal}€`
@@ -85,7 +90,7 @@ window.displayTotalAccPrice = function () {
     const anders = document.getElementById("andermants_input").value || 0;
     const drakens = document.getElementById("drakens_input").value;
     const ips = document.getElementById("ips_input").value;
-    
+
     const premDaysPrice = premDaysToCash(premDays, countryCode) || 0;
     const deluxeDaysPrice = deluxeDaysToCash(deluxeDays, countryCode) || 0;
     const shinyDustPrice = getDustAndDustInCash()[1] + calculateTotalJewelsPrice();
@@ -94,8 +99,14 @@ window.displayTotalAccPrice = function () {
     const drakenPrice = convertDrakenToCash(drakens, countryCode) || 0;
     const ipsPrice = convertIPsToCash(ips, countryCode) || 0;
 
+    console.log(typeof premDaysPrice);
+    console.log(typeof deluxeDaysPrice);
+    console.log(typeof ipsPrice);
+    console.log(typeof andersPrice);
+    console.log(typeof drakenPrice);
+
     const total = TotalPriceSum([premDaysPrice, deluxeDaysPrice, shinyDustPrice, andersPrice, drakenPrice, ipsPrice]);
-    document.getElementById("totalAccPrice").textContent = `Total account price (RAW) = ${total.toFixed(2)} €`;
+    document.getElementById("totalAccPrice").textContent = `Total account price = ${total.toFixed(2)} €`;
 }
 
 const flagData = [
@@ -108,7 +119,7 @@ const dropdownMenu = document.getElementById("countryDropdown");
 const selectedBtn = document.getElementById("dropdownSelected");
 const optionsDiv = document.getElementById("dropdownOptions");
 
-optionsDiv.addEventListener("click", function(e) {
+optionsDiv.addEventListener("click", function (e) {
     const btn = e.target.closest("button");
     if (!btn) return;
     const img = btn.querySelector("img");
