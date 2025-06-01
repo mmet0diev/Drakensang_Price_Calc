@@ -146,7 +146,7 @@ function getIPsInAnders(ips, ipAnderRatio=80){
 }
 
 // There is no ingame package/cash price for IPs so we will convert the average IP cost in ander to cash
-function convertIPsToCash(ips, ipAnderRatio=80, country="BG_EU"){
+function convertIPsToCash(ips, ipAnderRatio=80, country="TR_EU"){
     // 10 ips = 800 anders so 1 ip = 80 anders.
     let ipsToAnders = ips*ipAnderRatio;
     return andersToCash(ipsToAnders, country);
