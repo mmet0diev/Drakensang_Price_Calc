@@ -99,12 +99,6 @@ window.displayTotalAccPrice = function () {
     const drakenPrice = convertDrakenToCash(drakens, countryCode) || 0;
     const ipsPrice = convertIPsToCash(ips, countryCode) || 0;
 
-    console.log(typeof premDaysPrice);
-    console.log(typeof deluxeDaysPrice);
-    console.log(typeof ipsPrice);
-    console.log(typeof andersPrice);
-    console.log(typeof drakenPrice);
-
     const total = TotalPriceSum([premDaysPrice, deluxeDaysPrice, shinyDustPrice, andersPrice, drakenPrice, ipsPrice]);
     document.getElementById("totalAccPrice").textContent = `Total account price = ${total.toFixed(2)} €`;
 }
