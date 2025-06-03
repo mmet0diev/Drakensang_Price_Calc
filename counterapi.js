@@ -1,4 +1,4 @@
-const calcAppName = "mmet0diev.github.io/Drakensang_Price_Calc";
+const calcAppName = "mmet0diev_dso_price_calculator";
 const apiurl = `https://api.countapi.xyz/create?namespace=${calcAppName}&key=visits&value=0`;
 
 // Create a counter (first time only) in your browser console:
