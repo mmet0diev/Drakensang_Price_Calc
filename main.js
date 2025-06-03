@@ -88,18 +88,19 @@ window.displayTotalAccPrice = function () {
     const deluxeDays = document.getElementById("deluxe_days_input").value || 0;
     // const shinyDust = document.getElementById("shinydust_input").value || 0;
     const anders = document.getElementById("andermants_input").value || 0;
-    const drakens = document.getElementById("drakens_input").value || 0;
-    const ips = document.getElementById("ips_input").value || 0;
+    // const drakens = document.getElementById("drakens_input").value || 0;
+    // const ips = document.getElementById("ips_input").value || 0;
 
     const premDaysPrice = premDaysToCash(premDays, countryCode) || 0;
     const deluxeDaysPrice = deluxeDaysToCash(deluxeDays, countryCode) || 0;
     const shinyDustPrice = getDustAndDustInCash()[1] + calculateTotalJewelsPrice();
     // const shinyDustPrice = shinyDustToCash(shinyDust) || 0;
     const andersPrice = andersToCash(anders, countryCode) || 0;
-    const drakenPrice = convertDrakenToCash(drakens, countryCode) || 0;
-    const ipsPrice = convertIPsToCash(ips, countryCode) || 0;
+    // const drakenPrice = convertDrakenToCash(drakens, countryCode) || 0;
+    // const ipsPrice = convertIPsToCash(ips, countryCode) || 0;
 
-    const total = TotalPriceSum([premDaysPrice, deluxeDaysPrice, shinyDustPrice, andersPrice, drakenPrice, ipsPrice]);
+    // add drakenPrice, ipsPrice if needed.
+    const total = TotalPriceSum([premDaysPrice, deluxeDaysPrice, shinyDustPrice, andersPrice]);
     document.getElementById("totalAccPrice").textContent = `Total account price = ${total.toFixed(2)} €`;
 }
 
