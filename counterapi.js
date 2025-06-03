@@ -1,12 +1,14 @@
-const calcAppName = "mmet0diev_dso_price_calculator";
-const apiurl = `https://api.countapi.xyz/create?namespace=${calcAppName}&key=visits&value=0`;
+export function displayVisitsCount() {
+  const namespace = "mmet0diev_namespace";
+  const key = "calc_app_count";
 
-// Create a counter (first time only) in your browser console:
-fetch(apiurl)
+  const url = `https://api.countapi.store/hit/${namespace}/${key}`;
 
-// Increment and get the count on each visit:
-fetch(apiurl)
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('visitCounter').textContent = data.value;
-  });
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      document.getElementById("visitCounter").textContent = data.value;
+    })
+    .catch(err => console.error("Visit counter error:", err));
+}
