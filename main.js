@@ -1,5 +1,5 @@
 import {
-    premDaysToCash, andersToCash, shinyDustToCash, getIPsToAnders, TotalPriceSum,
+    premDaysToCash, andersToCash, shinyDustToCash, TotalPriceSum,
     calculateTotalGemsDust, calculateTotalGemsPrice, calculateTotalJewelsDust, calculateTotalJewelsPrice, convertDrakenToCash,
     convertIPsToCash, getDrakensInAnders, getIPsInAnders, deluxeDaysToCash
 } from "./functions.js"
@@ -39,7 +39,7 @@ window.displayIPsToCash = function () {
     const ipsEntered = document.getElementById("ips_input").value;
     const ipsField = document.getElementById("ipsInCash");
     document.getElementById("ipsinanders").textContent = `Total IPs in andermants: ${getIPsInAnders(ipsEntered)}`;
-    ipsField.textContent = `Total IPs in cash: ${convertIPsToCash(ipsEntered, countryCode)} €`;
+    ipsField.textContent = `Total IPs in cash: ${convertIPsToCash(ipsEntered, 80, countryCode)} €`;
 }
 
 window.displayTotalGemsShinyDust = function () {
@@ -89,7 +89,7 @@ window.displayTotalAccPrice = function () {
     // const shinyDust = document.getElementById("shinydust_input").value || 0;
     const anders = document.getElementById("andermants_input").value || 0;
     // const drakens = document.getElementById("drakens_input").value || 0;
-    // const ips = document.getElementById("ips_input").value || 0;
+    const ips = document.getElementById("ips_input").value || 0;
 
     const premDaysPrice = premDaysToCash(premDays, countryCode) || 0;
     const deluxeDaysPrice = deluxeDaysToCash(deluxeDays, countryCode) || 0;
@@ -97,10 +97,10 @@ window.displayTotalAccPrice = function () {
     // const shinyDustPrice = shinyDustToCash(shinyDust) || 0;
     const andersPrice = andersToCash(anders, countryCode) || 0;
     // const drakenPrice = convertDrakenToCash(drakens, countryCode) || 0;
-    // const ipsPrice = convertIPsToCash(ips, countryCode) || 0;
+    const ipsPrice = convertIPsToCash(ips, countryCode) || 0;
 
     // add drakenPrice, ipsPrice if needed.
-    const total = TotalPriceSum([premDaysPrice, deluxeDaysPrice, shinyDustPrice, andersPrice]);
+    const total = TotalPriceSum([premDaysPrice, deluxeDaysPrice, shinyDustPrice, andersPrice, ipsPrice]);
     document.getElementById("totalAccPrice").textContent = `Total account price = ${total.toFixed(2)} €`;
 }
 

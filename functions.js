@@ -1,6 +1,6 @@
 import { countryPrices } from "./CountryPrices.js";
 import { GemsPseudoDB, JewelsPseudoDB } from "./ObjectsPseudoDB.js";
-export { premDaysToCash, andersToCash, getIPsToAnders, shinyDustToCash, TotalPriceSum, calculateTotalGemsDust, calculateTotalGemsPrice,
+export { premDaysToCash, andersToCash, shinyDustToCash, TotalPriceSum, calculateTotalGemsDust, calculateTotalGemsPrice,
     calculateTotalJewelsDust, calculateTotalJewelsPrice, convertDrakenToCash, convertIPsToCash, getDrakensInAnders, getIPsInAnders, 
     deluxeDaysToCash
 };
@@ -48,7 +48,7 @@ The averageAnders is the sum of the anders of all 7 options to purchase anderman
 The averageAnderCost is the average (in money) of all 7 purchase options in the DSO shop divided by 7.
 */
 function andersToCash(anders = 0, country = "TR_EU") {
-    if (!checkValidCountryCode(country)) return "0.00";
+    if (!checkValidCountryCode(country)) return 0.00;
 
     // const { averageAndermant, averageAnderCost } = countryPrices[country];
     const avrgAndersNum = countryPrices[country]["averageAndermant"];
@@ -63,10 +63,6 @@ function shinyDustToCash(totalDust = 0, country = "TR_EU"){
     if (!checkValidCountryCode(country)) return 0;
     let res = totalDust / 105000 * countryPrices[country]["midDustPack"];
     return Number(res.toFixed(2));
-}
-
-function getIPsToAnders(ips){
-    return ips*0;
 }
 
 
