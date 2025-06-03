@@ -97,7 +97,7 @@ window.displayTotalAccPrice = function () {
     // const shinyDustPrice = shinyDustToCash(shinyDust) || 0;
     const andersPrice = andersToCash(anders, countryCode) || 0;
     // const drakenPrice = convertDrakenToCash(drakens, countryCode) || 0;
-    const ipsPrice = convertIPsToCash(ips, countryCode) || 0;
+    const ipsPrice = convertIPsToCash(ips, 80, countryCode) || 0;
 
     // add drakenPrice, ipsPrice if needed.
     const total = TotalPriceSum([premDaysPrice, deluxeDaysPrice, shinyDustPrice, andersPrice, ipsPrice]);
