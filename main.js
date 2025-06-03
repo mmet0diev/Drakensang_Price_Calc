@@ -88,8 +88,8 @@ window.displayTotalAccPrice = function () {
     const deluxeDays = document.getElementById("deluxe_days_input").value || 0;
     // const shinyDust = document.getElementById("shinydust_input").value || 0;
     const anders = document.getElementById("andermants_input").value || 0;
-    const drakens = document.getElementById("drakens_input").value;
-    const ips = document.getElementById("ips_input").value;
+    const drakens = document.getElementById("drakens_input").value || 0;
+    const ips = document.getElementById("ips_input").value || 0;
 
     const premDaysPrice = premDaysToCash(premDays, countryCode) || 0;
     const deluxeDaysPrice = deluxeDaysToCash(deluxeDays, countryCode) || 0;
