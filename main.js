@@ -101,7 +101,7 @@ window.displayTotalAccPrice = function () {
 
     // add drakenPrice, ipsPrice if needed.
     const total = TotalPriceSum([premDaysPrice, deluxeDaysPrice, shinyDustPrice, andersPrice, ipsPrice]);
-    document.getElementById("totalAccPrice").textContent = `Total account price = ${total.toFixed(2)} €`;
+    document.getElementById("totalAccPrice").textContent = `Total character price = ${total.toFixed(2)} €`;
 }
 
 
