@@ -149,21 +149,3 @@ function convertIPsToCash(ips, ipAnderRatio=80, country="TR_EU"){
     return andersToCash(ipsToAnders, country);
 }
 
-// function calculateTotalGemsPrice(gemsRarityArr, gemTypesArr, countsArr, country=countryPrices["BG_EU"]) {
-//     let totalPrice = 0;
-//     let index = 0;
-
-//     for (let i = 0; i < gemsRarityArr.length; i++) {
-//         for (let j = 0; j < gemTypesArr.length; j++) {
-//             const currCount = countsArr[index];
-
-//             const priceVal = GemsPseudoDB[gemID][2]; // assuming index 2 is price
-//             totalPrice += currCount * priceVal;
-
-//             index++;
-//         }
-//     }
-
-//     return totalPrice;
-// }
-
