@@ -338,6 +338,12 @@ th, td{
     display: block;
 }
 
+/* Counter API styling */
+.counterapi{
+    /* background-color: blue; */
+}
+
+
 
 @media (max-width: 768px) {
     .section1 {
