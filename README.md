@@ -3,7 +3,7 @@
 A simple calculator app for calculating a character's price in Drakensang online.
 The prices are based on the cheapest ingame currency (Turkish Lira), converted to EU.
 
-How the calculations work:
+How the calculator works:
 1. Premium days - calculated based on how many 30 days there are in the total number of premium days left in the account.
    Formula: days * (monthPrice / 30). Month price in TL (converted to EU) = 4.5€.
 2. Deluxe prem days - Same as regular premium but the price per month in TL to EU is = 10.12€.
