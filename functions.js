@@ -148,4 +148,3 @@ function convertIPsToCash(ips, ipAnderRatio=80, country="TR_EU"){
     let ipsToAnders = ips*ipAnderRatio;
     return andersToCash(ipsToAnders, country);
 }
-
